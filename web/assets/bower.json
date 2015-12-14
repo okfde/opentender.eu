@@ -19,6 +19,7 @@
     "ng-dialog": "~0.5.6",
     "minimal-grid": "*",
     "angular-sanitize": "~1.4.8",
-    "entypo": "*"
+    "entypo": "*",
+    "chroma-js": "~1.1.1"
   }
 }
