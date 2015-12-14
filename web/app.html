@@ -65,7 +65,7 @@
 					<div class="subtitle" ng-bind="view.hoverEntry.country.name"></div>
 					<div class="value">
 						<span ng-bind="view.hoverEntry.value"></span><span ng-bind="view.current.unit"></span>
-						<span ng-if="!(view.hoverEntry.value.length>0)" ng-bind="view.current.groups[view.hoverEntry.group].name"></span>
+						<div ng-if="!(view.hoverEntry.value.length>0)" ng-bind="view.current.groups[view.hoverEntry.group].name"></div>
 					</div>
 					<div class="info" ng-if="view.hoverEntry.info" ng-bind="view.hoverEntry.info"></div>
 					<span ng-if="(view.hoverEntry.value.length>0) && (view.hoverEntry.value!==view.current.groups[view.hoverEntry.group].name)" class="subtitle" ng-bind="view.current.groups[view.hoverEntry.group].name"></span>

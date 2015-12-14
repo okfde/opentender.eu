@@ -181,7 +181,7 @@ app.controller('MainCtrl', function ($scope, $http, $document, $timeout, countri
 			});
 
 			$scope.view.tables = result.data;
-			$scope.view.table = result.data[17];
+			$scope.view.table = result.data[0];
 		});
 	}
 
