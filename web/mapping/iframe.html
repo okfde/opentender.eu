@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Access to tender info in the EU</title>
+	<link rel="stylesheet" type="text/css" href="../assets/bower_components/lato-font/css/lato-font.min.css">
+	<link rel="stylesheet" type="text/css" href="../assets/bower_components/entypo/font/entypo.css">
+	<link rel="stylesheet" type="text/css" href="../assets/bower_components/ng-dialog/css/ngDialog.min.css">
+	<link rel="stylesheet" type="text/css" href="../assets/bower_components/ng-dialog/css/ngDialog-theme-default.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/app.css"/>
+	<script src="../assets/bower_components/chroma-js/chroma.min.js"></script>
+	<script src="../assets/bower_components/angular/angular.min.js"></script>
+	<script src="../assets/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+	<script src="../assets/bower_components/angular-animate/angular-animate.min.js"></script>
+	<script src="../assets/bower_components/ng-dialog/js/ngDialog.min.js"></script>
+	<script src="../assets/js/app.js"></script>
+</head>
+<body class="iframe" ng-app="SvgMapApp" ng-controller="IframeCtrl">
+<div class="header">
+	<a href class="pull-right" ng-show="view.mode!==1" ng-click="view.mode=1;">Back to Map</a>
+	<a class="brand" href="https://opentender.eu/mapping/" target="_blank">opentender.eu <span>Tender Landscape</span></a>
+	<br/>
+
+	<a href ng-show="view.mode!==3" class="headline" ng-click="view.mode=view.mode==1?2:1;" ng-bind="view.current.name"></a>
+	<span ng-show="view.mode==3" class="headline" ng-bind="view.country.name"></span>
+
+</div>
+<div class="animate-switch-container" ng-switch on="view.mode">
+	<div class="animate-switch-right" ng-switch-when="1">
+		<div class="map" svg-map map-data="view"></div>
+		<div class="legend table">
+			<div class="row">
+				<div class="cell" ng-repeat="group in view.current.groups" backcolor="{{group.color}}" ng-bind="group.name"></div>
+			</div>
+		</div>
+	</div>
+	<div class="animate-switch-left" ng-switch-when="2">
+		<div class="tools pull-right" ng-controller="ToolsCtrl">
+			<a href ng-click="view.showvalues=!view.showvalues"><i title="See {{view.showvalues?'Groups':'Values'}}" ng-class="{'icon-flow-cascade':view.showvalues,'icon-list':!view.showvalues}"></i></a>
+			<a href ng-click="exportTSV(view.table)"><i title="Download as TSV" class="icon-download"></i></a>
+		</div>
+		<div ng-include="'../assets/partials/table.html'"></div>
+	</div>
+	<div class="animate-switch-left" ng-switch-when="3">
+		<div class="grid-container">
+			<div class="grid-cell-100 country">
+				<div ng-repeat="(sec,section) in view.country.info">
+					<h3 ng-bind="sec"></h3>
+					<div class="country-content">
+						<div ng-repeat="(key,content) in section">
+							<div class="label" ng-bind="key"></div>
+							<div class="text" ng-repeat="s in content" ng-bind-html="s | linkify"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,6 +1,71 @@
-var app = angular.module('SvgMapApp', ['ngSanitize', 'ngDialog']);
+var app = angular.module('SvgMapApp', ['ngSanitize', 'ngAnimate', 'ngDialog']);
 
-app.controller('MainCtrl', function ($scope, $http, $document, $timeout, countries, ngDialog) {
+app.controller('IframeCtrl', function ($scope, $rootScope, data, $location, ngDialog) {
+	$scope.view = {
+		tables: [],
+		table: null,
+		showvalues: false,
+		mode:1,
+		changeHoverEntry: function (entry) {
+			$scope.view.hoverEntry = entry;
+		},
+		displayCountry: function (country) {
+			if (!country.info) return;
+			$scope.view.country = country;
+			$scope.view.mode = 3;
+		}
+	};
+
+	$rootScope.$on('$locationChangeSuccess', function (event) {
+		display();
+	});
+
+	var display = function () {
+		if (!$scope.view.tables) return;
+		var searchObject = $location.search();
+		$scope.view.table = $scope.view.tables[searchObject.nr || 0];
+		if ($scope.view.table) {
+			if ($scope.view.table.values)
+				$scope.view.current = $scope.view.table.values[searchObject.sub || 0];
+			else
+				$scope.view.current = $scope.view.table;
+		}
+	};
+
+	data.tables(function (err, tables) {
+		$scope.view.tables = tables;
+		display();
+	})
+});
+
+app.controller('ToolsCtrl', function ($scope, $document, $timeout, data, ngDialog) {
+
+	$scope.exportTSV = function (table) {
+		var tsv = data.toTSV(table);
+		var filename = table.name.toLowerCase().replace(/ /g, '_').replace(/,/g, '') + ".tsv";
+		var charset = "utf-8";
+		var blob = new Blob([tsv], {
+			type: "text/tsv;charset=" + charset + ";"
+		});
+		if (window.navigator.msSaveOrOpenBlob) {
+			navigator.msSaveBlob(blob, filename);
+		} else {
+			var downloadContainer = angular.element('<div data-tap-disabled="true"><a></a></div>');
+			var downloadLink = angular.element(downloadContainer.children()[0]);
+			downloadLink.attr('href', window.URL.createObjectURL(blob));
+			downloadLink.attr('download', filename);
+			downloadLink.attr('target', '_blank');
+			$document.find('body').append(downloadContainer);
+			$timeout(function () {
+				downloadLink[0].click();
+				downloadLink.remove();
+			}, null);
+		}
+	};
+
+});
+
+app.controller('MainCtrl', function ($scope, $document, $timeout, data, ngDialog) {
 	$scope.view = {
 		tables: [],
 		table: null,
@@ -10,7 +75,7 @@ app.controller('MainCtrl', function ($scope, $http, $document, $timeout, countri
 		},
 		displayCountry: function (country) {
 			ngDialog.open({
-				template: 'assets/partials/country.html',
+				template: '../assets/partials/country.html',
 				controller: function ($scope) {
 					$scope.country = country;
 					$scope.view = {section: 'Info'};
@@ -30,168 +95,145 @@ app.controller('MainCtrl', function ($scope, $http, $document, $timeout, countri
 		}
 	});
 
-	$scope.changeHoverEntry = $scope.view.changeHoverEntry;
-	$scope.displayCountry = $scope.view.displayCountry;
+	data.tables(function (err, tables) {
+		$scope.view.tables = tables;
+		$scope.view.table = tables[0];
+	})
+});
 
-	$scope.exportTSV = function (table) {
-		var rows = [];
-		rows.push([table.nr + '. ' + table.name]);
-		rows.push([]);
-		if (table.entries) {
-			rows.push(['Country', 'Value', 'Group', 'Info']);
-			rows.push([]);
+app.factory('data', function (countries, $http) {
+
+	var prepareTable = function (table) {
+		if (!table.groups) {
+			var groups = [];
 			table.entries.forEach(function (entry) {
-				var row = [];
-				row.push(entry.id);
-				row.push(entry.value);
-				row.push(table.groups[entry.group].name);
-				row.push(entry.info);
-				rows.push(row);
-			})
-		} else {
-			var cols = [];
-			var c = {};
-			table.values.forEach(function (t, i) {
-				cols.push(t.name);
-				cols.push('Info - ' + t.name);
-				t.entries.forEach(function (e) {
-					c[e.id] = c[e.id] || [];
-					while (c[e.id].length < cols.length) {
-						c[e.id].push('');
-					}
-					if (e.value == null) {
-						c[e.id][cols.length - 2] = t.groups[e.group].name;
-					} else {
-						c[e.id][cols.length - 2] = e.value;
-					}
-					c[e.id][cols.length - 1] = e.info;
-				});
+				if (groups.indexOf(entry.value) < 0) groups.push(entry.value);
 			});
-			rows.push(['Country'].concat(cols));
-			Object.keys(c).forEach(function (key) {
-				rows.push([key].concat(c[key]));
+			table.entries.forEach(function (entry) {
+				entry.group = groups.indexOf(entry.value);
+			});
+			table.groups = groups.sort(function (a, b) {
+				if (a < b) return -1;
+				if (a > b) return 1;
+				return 0;
+			});
+		}
+		if (!table.groups.length) {
+			table.groups = ['Value'];
+			table.entries.forEach(function (entry) {
+				entry.group = 0;
 			});
 		}
 
-		var tsv = rows.map(function (row) {
-			return row.join('\t')
-		}).join('\n');
-
-
-		var filename = table.name.toLowerCase().replace(/ /g, '_').replace(/,/g, '') + ".tsv";
-		var charset = "utf-8";
-		var blob = new Blob([tsv], {
-			type: "text/tsv;charset=" + charset + ";"
+		var scale = chroma.scale(['#2ca25f', '#e5f5f9']).domain([0, table.groups.length], table.groups.length);//, 'quantiles');
+		table.entries.forEach(function (entry) {
+			var country = countries.byName(entry.id);
+			if (!country) {
+				console.log('country not found', entry.id);
+			} else {
+				entry.country = country;
+			}
+			if (entry.group == undefined) {
+				entry.group = table.groups.indexOf(entry.value);
+			}
+			entry.color = scale(entry.group).hex();
 		});
 
-		if (window.navigator.msSaveOrOpenBlob) {
-			navigator.msSaveBlob(blob, filename);
-		} else {
+		var rd = {};
+		table.groups = table.groups.map(function (group, i) {
+			var items = table.entries.filter(function (entry) {
+				return entry.country && ((entry.group === i));
+			}).map(function (entry) {
+				var value = {
+					value: entry,
+					country: entry.country
+				};
+				rd[entry.country.iso] = value;
+				return value;
+			});
+			return {name: group, color: scale(i).hex(), items: items};
+		});
 
-			var downloadContainer = angular.element('<div data-tap-disabled="true"><a></a></div>');
-			var downloadLink = angular.element(downloadContainer.children()[0]);
-			downloadLink.attr('href', window.URL.createObjectURL(blob));
-			downloadLink.attr('download', filename);
-			downloadLink.attr('target', '_blank');
-
-			$document.find('body').append(downloadContainer);
-			$timeout(function () {
-				downloadLink[0].click();
-				downloadLink.remove();
-			}, null);
-		}
+		var pt = [];
+		table.groups.forEach(function (group, col) {
+			group.items.forEach(function (item, row) {
+				while (pt.length <= row) pt.push([]);
+				while (pt[row].length <= col) pt[row].push(false);
+				pt[row][col] = item;
+			});
+		});
+		table.regions = rd;
+		table.view = pt;
 	};
 
-
-	function getData() {
-		$http.get('assets/data/tables.json').then(function (result) {
-
-			var prepareTable = function (table) {
-				if (!table.groups) {
-					var groups = [];
-					table.entries.forEach(function (entry) {
-						if (groups.indexOf(entry.value) < 0) groups.push(entry.value);
-					});
-					table.entries.forEach(function (entry) {
-						entry.group = groups.indexOf(entry.value);
-					});
-					table.groups = groups.sort(function (a, b) {
-						if (a < b) return -1;
-						if (a > b) return 1;
-						return 0;
-					});
-				}
-				if (!table.groups.length) {
-					table.groups = ['Value'];
-					table.entries.forEach(function (entry) {
-						entry.group = 0;
-					});
-				}
-
-				var scale = chroma.scale(['#2ca25f','#e5f5f9']).domain([0, table.groups.length], table.groups.length);//, 'quantiles');
+	return {
+		toTSV: function (table) {
+			var rows = [];
+			rows.push([table.nr + '. ' + table.name]);
+			rows.push([]);
+			if (table.entries) {
+				rows.push(['Country', 'Value', 'Group', 'Info']);
+				rows.push([]);
 				table.entries.forEach(function (entry) {
-					var country = countries.byName(entry.id);
-					if (!country) {
-						console.log('country not found', entry.id);
-					} else {
-						entry.country = country;
-					}
-					if (entry.group == undefined) {
-						entry.group = table.groups.indexOf(entry.value);
-					}
-					entry.color = scale(entry.group).hex();
-				});
-
-				var rd = {};
-				table.groups = table.groups.map(function (group, i) {
-					var items = table.entries.filter(function (entry) {
-						return entry.country && ((entry.group === i));
-					}).map(function (entry) {
-						var value = {
-							value: entry,
-							country: entry.country
-						};
-						rd[entry.country.iso] = value;
-						return value;
-					});
-					return {name: group, color: scale(i).hex(), items: items};
-				});
-
-				var pt = [];
-				table.groups.forEach(function (group, col) {
-					group.items.forEach(function (item, row) {
-						while (pt.length <= row) pt.push([]);
-						while (pt[row].length <= col) pt[row].push(false);
-						pt[row][col] = item;
+					var row = [];
+					row.push(entry.id);
+					row.push(entry.value);
+					row.push(table.groups[entry.group].name);
+					row.push(entry.info);
+					rows.push(row);
+				})
+			} else {
+				var cols = [];
+				var c = {};
+				table.values.forEach(function (t, i) {
+					cols.push(t.name);
+					cols.push('Info - ' + t.name);
+					t.entries.forEach(function (e) {
+						c[e.id] = c[e.id] || [];
+						while (c[e.id].length < cols.length) {
+							c[e.id].push('');
+						}
+						if (e.value == null) {
+							c[e.id][cols.length - 2] = t.groups[e.group].name;
+						} else {
+							c[e.id][cols.length - 2] = e.value;
+						}
+						c[e.id][cols.length - 1] = e.info;
 					});
 				});
-				table.regions = rd;
-				table.view = pt;
-			};
-
-			result.data.forEach(function (table) {
-				if (table.values) {
-					table.values.forEach(function (t) {
-						t.groups = t.groups || table.groups;
-						t.unit = t.unit || table.unit;
-						prepareTable(t);
+				rows.push(['Country'].concat(cols));
+				Object.keys(c).forEach(function (key) {
+					rows.push([key].concat(c[key]));
+				});
+			}
+			var tsv = rows.map(function (row) {
+				return row.join('\t')
+			}).join('\n');
+			return tsv;
+		},
+		tables: function (cb) {
+			$http.get('../assets/data/tables.json')
+				.then(function (result) {
+					result.data.forEach(function (table) {
+						if (table.values) {
+							table.values.forEach(function (t) {
+								t.groups = t.groups || table.groups;
+								t.unit = t.unit || table.unit;
+								prepareTable(t);
+							});
+						}
+						else prepareTable(table);
 					});
-				}
-				else prepareTable(table);
-			});
-
-			$scope.view.tables = result.data;
-			$scope.view.table = result.data[0];
-		});
-	}
-
-	getData();
+					cb(null, result.data);
+				})
+		}
+	};
 });
 
 app.directive('svgMap', function ($compile) {
 	return {
 		restrict: 'A',
-		templateUrl: 'assets/svg/borders_iso.svg',
+		templateUrl: '../assets/svg/borders_iso.svg',
 		scope: {
 			mapData: "="
 		},
@@ -212,7 +254,7 @@ app.directive('region', function ($compile, countries) {
 	return {
 		restrict: 'A',
 		scope: {
-			mapData: "=",
+			mapData: "="
 		},
 		link: function (scope, element, attrs) {
 			scope.elementId = element.attr("id").slice(0, 2);
@@ -319,7 +361,7 @@ app.factory('countries', function ($http) {
 		c.iso = c.iso.toLowerCase();
 	});
 
-	$http.get('assets/data/countries.json').then(function (result) {
+	$http.get('../assets/data/countries.json').then(function (result) {
 		result.data.forEach(function (d) {
 			if (d.name == 'European Commission') d.name = 'EC';
 			var c = me.byName(d.name);

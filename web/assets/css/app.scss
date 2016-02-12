@@ -172,7 +172,7 @@ a {
     text-align: center;
     outline: medium none;
     transition: color 0.25s ease 0s;
-    &.active{
+    &.active {
       padding: 4px;
       color: $text-color-bold;
       font-weight: $font-weight-bold;
@@ -180,7 +180,7 @@ a {
     &:hover {
       //padding: 4px;
       color: $text-color-bold;
-      background-color: rgba(0,0,0,0.1);
+      background-color: rgba(0, 0, 0, 0.1);
       //font-weight: $font-weight-bold;
     }
 
@@ -201,6 +201,14 @@ a {
 
 .pull-right {
   float: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.tools {
+  margin-right: 20px;
 }
 
 svg {
@@ -327,6 +335,11 @@ svg {
   }
 }
 
+.ngdialog.ngdialog-theme-default {
+  padding-bottom: 0; // 160px;
+  padding-top: 0; //160px;
+}
+
 .ngdialog.ngdialog-theme-default .ngdialog-content {
   width: 80%;
   max-width: 640px;
@@ -337,39 +350,211 @@ svg {
   color: $primary-text-color;
 }
 
-.country {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  font-weight: 300;
-  font-size: 15px;
-  color: $text-color;
+.country-dialog {
 
-  div {
-    margin: 0;
-    padding: 0;
-  }
-
-  .country-name {
-    color: $text-color-bold;
-    font-weight: $font-weight-bold;
-    font-size: 1.4em;
-    margin-bottom: 20px;
-  }
-
-  .country-content {
+  .country {
     margin-top: 10px;
-  }
-  .label {
-    color: $text-color-bold;
-    font-weight: $font-weight-bold;
-  }
-  .text {
-    font-size: 0.9em;
-    padding-left: 20px;
-    line-height: 1.4em;
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-size: 15px;
+    color: $text-color;
 
-    a {
-      text-decoration: underline;
+    div {
+      margin: 0;
+      padding: 0;
+    }
+
+    .country-name {
+      color: $text-color-bold;
+      font-weight: $font-weight-bold;
+      font-size: 1.4em;
+      margin-bottom: 20px;
+    }
+
+    .country-content {
+      margin-top: 10px;
+    }
+    .label {
+      color: $text-color-bold;
+      font-weight: $font-weight-bold;
+    }
+    .text {
+      font-size: 0.9em;
+      padding-left: 20px;
+      line-height: 1.4em;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+
+}
+
+.iframe {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ececec;
+
+  .header {
+    height: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+    .headline {
+      color: $text-color-bold;
+      font-weight: $font-weight-bold;
+      font-size: 1.1em;
+      display: block;
+      width: 100%;
+    }
+    .headline-country {
+    }
+
+    .brand {
+      font-weight: bold;
+      span {
+        display: none;
+      }
+    }
+
+  }
+
+  .legend {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .country {
+    font-weight: 300;
+    font-size: 15px;
+    color: $text-color;
+
+    h3 {
+      margin-bottom: 0;
+    }
+
+    div {
+      margin: 0;
+      padding: 0;
+    }
+
+    .label {
+      color: $text-color-bold;
+      font-weight: $font-weight-bold;
+    }
+    .text {
+      font-size: 0.9em;
+      padding-left: 20px;
+      line-height: 1.4em;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .animate-switch-container {
+    max-width: 600px;
+    margin: 0 auto;
+
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    border: 1px solid #ececec;
+    overflow-x: hidden;
+
+    .animate-switch-left {
+      //display: inline-block;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      //position: absolute;
+
+      &.ng-animate {
+        -webkit-transition: 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+        -moz-transition: 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+        -ms-transition: 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+        -o-transition: 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+        transition: 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      }
+
+      &.ng-enter {
+        left: 100%;
+      }
+      &.ng-enter.ng-enter-active {
+        left: 0;
+      }
+      &.ng-leave {
+        left: 0;
+      }
+
+      &.ng-leave.ng-leave-active {
+        left: 100%;
+      }
+    }
+
+    .animate-switch-right {
+      //display: inline-block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow-y: auto;
+      //position: absolute;
+
+      &.ng-animate {
+        -webkit-transition: 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+        -moz-transition: 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+        -ms-transition: 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+        -o-transition: 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+        transition: 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+      }
+
+      &.ng-enter {
+        left: -100%;
+      }
+      &.ng-enter.ng-enter-active {
+        left: 0;
+      }
+      &.ng-leave {
+        left: 0;
+      }
+
+      &.ng-leave.ng-leave-active {
+        left: -100%;
+      }
+    }
+
+  }
+
+}
+
+@media only screen and (min-width: 400px) {
+  .iframe {
+
+    .header {
+      height: 48px;
+
+      .headline {
+        font-size: 1.4em;
+      }
+
+      .brand {
+        span {
+          display: inherit;
+        }
+      }
+
+    }
+    .animate-switch-container {
+      top: 48px;
     }
   }
 }

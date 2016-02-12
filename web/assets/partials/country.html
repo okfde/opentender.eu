@@ -1,12 +1,10 @@
-<div class="ngdialog-message">
-	<div class="grid-container">
-		<div class="grid-cell-100 country">
-			<div class="country-name" ng-bind="country.name"></div>
-			<div class="tab-host">
-				<div ng-repeat="(sec,section) in country.info" ng-click="view.section = sec" ng-bind="sec" class="tab-cell" ng-class="{active:view.section==sec}"></div>
-			</div>
+<div class="grid-container">
+	<div class="grid-cell-100 country">
+		<div class="country-name" ng-bind="country.name"></div>
+		<div ng-repeat="(sec,section) in country.info">
+			<h3 ng-bind="sec"></h3>
 			<div class="country-content">
-				<div ng-repeat="(key,content) in country.info[view.section]">
+				<div ng-repeat="(key,content) in section">
 					<div class="label" ng-bind="key"></div>
 					<div class="text" ng-repeat="s in content" ng-bind-html="s | linkify"></div>
 				</div>

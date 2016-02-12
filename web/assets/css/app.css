@@ -177,6 +177,12 @@ a {
 .pull-right {
   float: right; }
 
+.text-center {
+  text-align: center; }
+
+.tools {
+  margin-right: 20px; }
+
 svg {
   border: 1px solid #d2d2d2;
   display: block; }
@@ -261,6 +267,10 @@ svg {
     color: black;
     font-weight: 400; }
 
+.ngdialog.ngdialog-theme-default {
+  padding-bottom: 0;
+  padding-top: 0; }
+
 .ngdialog.ngdialog-theme-default .ngdialog-content {
   width: 80%;
   max-width: 640px; }
@@ -269,30 +279,132 @@ svg {
   background-color: #1F1A17;
   color: #fff; }
 
-.country {
+.country-dialog .country {
   margin-top: 10px;
   margin-bottom: 20px;
   font-weight: 300;
   font-size: 15px;
   color: #333; }
-  .country div {
+  .country-dialog .country div {
     margin: 0;
     padding: 0; }
-  .country .country-name {
+  .country-dialog .country .country-name {
     color: black;
     font-weight: 400;
     font-size: 1.4em;
     margin-bottom: 20px; }
-  .country .country-content {
+  .country-dialog .country .country-content {
     margin-top: 10px; }
-  .country .label {
+  .country-dialog .country .label {
     color: black;
     font-weight: 400; }
-  .country .text {
+  .country-dialog .country .text {
     font-size: 0.9em;
     padding-left: 20px;
     line-height: 1.4em; }
-    .country .text a {
+    .country-dialog .country .text a {
       text-decoration: underline; }
+
+.iframe {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ececec; }
+  .iframe .header {
+    height: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px; }
+    .iframe .header .headline {
+      color: black;
+      font-weight: 400;
+      font-size: 1.1em;
+      display: block;
+      width: 100%; }
+    .iframe .header .brand {
+      font-weight: bold; }
+      .iframe .header .brand span {
+        display: none; }
+  .iframe .legend {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; }
+  .iframe .country {
+    font-weight: 300;
+    font-size: 15px;
+    color: #333; }
+    .iframe .country h3 {
+      margin-bottom: 0; }
+    .iframe .country div {
+      margin: 0;
+      padding: 0; }
+    .iframe .country .label {
+      color: black;
+      font-weight: 400; }
+    .iframe .country .text {
+      font-size: 0.9em;
+      padding-left: 20px;
+      line-height: 1.4em; }
+      .iframe .country .text a {
+        text-decoration: underline; }
+  .iframe .animate-switch-container {
+    max-width: 600px;
+    margin: 0 auto;
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    border: 1px solid #ececec;
+    overflow-x: hidden; }
+    .iframe .animate-switch-container .animate-switch-left {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto; }
+      .iframe .animate-switch-container .animate-switch-left.ng-animate {
+        -webkit-transition: 200ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+        -moz-transition: 200ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+        -ms-transition: 200ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+        -o-transition: 200ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+        transition: 200ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all; }
+      .iframe .animate-switch-container .animate-switch-left.ng-enter {
+        left: 100%; }
+      .iframe .animate-switch-container .animate-switch-left.ng-enter.ng-enter-active {
+        left: 0; }
+      .iframe .animate-switch-container .animate-switch-left.ng-leave {
+        left: 0; }
+      .iframe .animate-switch-container .animate-switch-left.ng-leave.ng-leave-active {
+        left: 100%; }
+    .iframe .animate-switch-container .animate-switch-right {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow-y: auto; }
+      .iframe .animate-switch-container .animate-switch-right.ng-animate {
+        -webkit-transition: 200ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+        -moz-transition: 200ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+        -ms-transition: 200ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+        -o-transition: 200ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+        transition: 200ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all; }
+      .iframe .animate-switch-container .animate-switch-right.ng-enter {
+        left: -100%; }
+      .iframe .animate-switch-container .animate-switch-right.ng-enter.ng-enter-active {
+        left: 0; }
+      .iframe .animate-switch-container .animate-switch-right.ng-leave {
+        left: 0; }
+      .iframe .animate-switch-container .animate-switch-right.ng-leave.ng-leave-active {
+        left: -100%; }
+
+@media only screen and (min-width: 400px) {
+  .iframe .header {
+    height: 48px; }
+    .iframe .header .headline {
+      font-size: 1.4em; }
+    .iframe .header .brand span {
+      display: inherit; }
+  .iframe .animate-switch-container {
+    top: 48px; } }
 
 /*# sourceMappingURL=app.css.map */

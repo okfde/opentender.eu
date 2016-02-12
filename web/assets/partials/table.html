@@ -1,0 +1,43 @@
+<div ng-switch="view.showvalues">
+	<div class="values-view" ng-switch-when="true">
+		<div class="row header-row">
+			<div class="cell">Name</div>
+			<div class="cell">Value</div>
+			<div class="cell">Info</div>
+		</div>
+		<div class="row" ng-repeat="entry in view.current.entries"
+			 ng-mouseover="view.changeHoverEntry(entry)"
+			 ng-mouseleave="view.changeHoverEntry()"
+			 ng-class="{active:view.hoverEntry.country.iso==entry.country.iso}">
+			<div class="cell values-view-country" ng-bind="entry.id" ng-click="view.displayCountry(entry.country)"></div>
+			<div class="cell">
+				<span class="dot" backcolor="{{entry.color}}"></span>
+				<span ng-bind="entry.value"></span><span ng-bind="view.current.unit"></span>
+				<span ng-if="entry.value==null" ng-bind="view.current.groups[entry.group].name"></span>
+			</div>
+			<div class="cell" ng-bind="entry.info"></div>
+		</div>
+	</div>
+	<div class="group-view" ng-switch-when="false">
+		<div class="table">
+			<div class="row header-row">
+				<div class="cell" ng-repeat="group in view.current.groups">
+					<span class="dot" backcolor="{{group.color}}"></span>
+					<span ng-bind="group.name"></span>
+				</div>
+			</div>
+			<div class="row" ng-repeat="row in view.current.view">
+				<div class="cell" ng-class="{empty:!cell}" ng-repeat="cell in row track by $index">
+					<div ng-if="cell"
+						 title="{{cell.value.info}}"
+						 ng-class="{active:view.hoverEntry.country.iso==cell.value.country.iso}"
+						 ng-mouseover="view.changeHoverEntry(cell.value)"
+						 ng-mouseleave="view.changeHoverEntry()"
+						 ng-click="view.displayCountry(cell.value.country)">
+						<span ng-bind="cell.value.id"></span><span ng-if="cell.value.info">* </span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

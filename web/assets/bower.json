@@ -20,6 +20,7 @@
     "minimal-grid": "*",
     "angular-sanitize": "~1.4.8",
     "entypo": "*",
-    "chroma-js": "~1.1.1"
+    "chroma-js": "~1.1.1",
+    "angular-animate": "~1.5.0"
   }
 }
