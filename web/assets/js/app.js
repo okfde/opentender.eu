@@ -128,7 +128,7 @@ app.controller('MainCtrl', function ($scope, $http, $document, $timeout, countri
 					});
 				}
 
-				var scale = chroma.scale(['#e5f5f9', '#2ca25f']).domain([0, table.groups.length], table.groups.length);//, 'quantiles');
+				var scale = chroma.scale(['#2ca25f','#e5f5f9']).domain([0, table.groups.length], table.groups.length);//, 'quantiles');
 				table.entries.forEach(function (entry) {
 					var country = countries.byName(entry.id);
 					if (!country) {
