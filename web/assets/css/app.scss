@@ -3,7 +3,7 @@
 $border-color: #d2d2d2;
 $text-color: #333;
 $text-color-bold: black;
-$font-weight-bold: 400;
+$font-weight-bold: 600;
 $primary-color: #1F1A17;
 $primary-text-color: #fff;
 
@@ -75,6 +75,16 @@ header {
       @include grid(20);
     }
   }
+  .grid-cell-25 {
+    display: inline-block;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    @include grid(100);
+    @include breakpoint(from-medium) {
+      @include grid(25);
+    }
+  }
   .grid-cell-80 {
     display: inline-block;
     float: left;
@@ -85,14 +95,24 @@ header {
       @include grid(80);
     }
   }
+  .grid-cell-75 {
+    display: inline-block;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    @include grid(100);
+    @include breakpoint(from-medium) {
+      @include grid(75);
+    }
+  }
 }
 
 a {
   color: $text-color;
   text-decoration: none;
   &:hover, &.active {
+    text-decoration: underline;
     color: $text-color-bold;
-    font-weight: $font-weight-bold;
   }
 }
 
@@ -112,6 +132,19 @@ a {
 
   a {
     display: block;
+    color: lighten($text-color-bold, 33);
+    border: 1px solid #f0f0f0;
+    font-size: 0.9em;
+    padding: 2px;
+    &.active {
+      color: $text-color-bold;
+      border-color: darken($border-color, 33);
+    }
+    &:hover {
+      color: $text-color-bold;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
     > div {
       display: table-cell;
     }
@@ -132,15 +165,14 @@ a {
   display: table;
   width: 100%;
   max-width: 100%;
-}
+  .row {
+    display: table-row;
 
-.row {
-  display: table-row;
-}
-
-.cell {
-  display: table-cell;
-  padding: 4px;
+    .cell {
+      display: table-cell;
+      padding: 4px;
+    }
+  }
 }
 
 .tab-host {
@@ -156,7 +188,7 @@ a {
 
   .tab-cell {
     border: 1px solid $border-color;
-    color: inherit;
+    color: lighten($text-color-bold, 33);
     cursor: pointer;
     font-size: 0.9em;
 
@@ -175,7 +207,7 @@ a {
     &.active {
       padding: 4px;
       color: $text-color-bold;
-      font-weight: $font-weight-bold;
+      border-color: darken($border-color, 33);
     }
     &:hover {
       //padding: 4px;
@@ -251,8 +283,8 @@ svg {
   .header-row {
     color: $text-color-bold;
     font-weight: $font-weight-bold;
+    font-size: 0.9em;
     .cell {
-
       border-bottom: 1px solid $border-color;
     }
   }
@@ -273,7 +305,8 @@ svg {
 
   .active {
     color: $text-color-bold;
-    font-weight: $font-weight-bold;
+    text-decoration: underline;
+    //font-weight: $font-weight-bold;
   }
 }
 
@@ -402,24 +435,32 @@ svg {
     padding-right: 10px;
     padding-top: 2px;
     padding-bottom: 2px;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    min-width: 100%;
 
-    .headline {
-      color: $text-color-bold;
-      font-weight: $font-weight-bold;
-      font-size: 1.1em;
-      display: block;
+    > div {
+      display: table-cell;
       width: 100%;
-    }
-    .headline-country {
-    }
-
-    .brand {
-      font-weight: bold;
-      span {
-        display: none;
+      min-width: 100%;
+      vertical-align: middle;
+      .headline {
+        color: $text-color-bold;
+        font-weight: $font-weight-bold;
+        font-size: 1.1em;
+        display: block;
+        width: 100%;
+      }
+      .headline-country {
+      }
+      .brand {
+        font-weight: bold;
+        span {
+          display: none;
+        }
       }
     }
-
   }
 
   .legend {
@@ -458,8 +499,16 @@ svg {
     }
   }
 
+  .group-view {
+    border: none;
+  }
+
+  .tools {
+    margin-right: 0;
+  }
+
   .animate-switch-container {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
 
     position: absolute;

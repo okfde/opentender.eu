@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="App">
 <head lang="en">
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Access to tender info in the EU</title>
+	<title>Tender Landscape - Access to tender info in the EU</title>
 	<link rel="stylesheet" type="text/css" href="../assets/bower_components/lato-font/css/lato-font.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/bower_components/entypo/font/entypo.css">
 	<link rel="stylesheet" type="text/css" href="../assets/bower_components/ng-dialog/css/ngDialog.min.css">
@@ -17,7 +17,7 @@
 	<script src="../assets/bower_components/ng-dialog/js/ngDialog.min.js"></script>
 	<script src="../assets/js/app.js"></script>
 </head>
-<body ng-app="SvgMapApp" ng-controller="MainCtrl">
+<body ng-controller="MainCtrl">
 
 <header>
 	<div class="grid-container">
@@ -26,7 +26,7 @@
 </header>
 
 <div class="grid-container">
-	<div class="grid-cell-20">
+	<div class="grid-cell-25">
 		<div class="table-list">
 			<div ng-repeat="table in view.tables">
 				<a href ng-click="view.table = table" ng-class="{active:view.table==table}">
@@ -37,7 +37,7 @@
 		</div>
 	</div>
 
-	<div class="grid-cell-80">
+	<div class="grid-cell-75">
 
 		<div>
 			<div class="tools pull-right" ng-controller="ToolsCtrl">

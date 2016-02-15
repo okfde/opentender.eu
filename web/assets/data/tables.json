@@ -733,7 +733,7 @@
   {
     "nr":10,
     "name":"Machine-readability of information",
-    "groups":["Not fully machine-readable","Fully machine-readable in semi-structured format (e. g. pdf, html)","Fully machine-readable in structured formats (e.g. xml)"],
+    "groups":["Not fully machine-readable","Fully machine-readable in semi-structured format (e.g. pdf, html)","Fully machine-readable in structured formats (e.g. xml)"],
     "entries": [
       {"id":"Belgium","info":"since 2010", "group":2},
       {"id":"EC","info":"since March 2010", "group":2},

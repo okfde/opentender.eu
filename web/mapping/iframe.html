@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html lang="en" ng-app="App">
+<head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,16 +17,17 @@
 	<script src="../assets/bower_components/ng-dialog/js/ngDialog.min.js"></script>
 	<script src="../assets/js/app.js"></script>
 </head>
-<body class="iframe" ng-app="SvgMapApp" ng-controller="IframeCtrl">
+<body class="iframe" ng-controller="IframeCtrl">
 <div class="header">
-	<a href class="pull-right" ng-show="view.mode!==1" ng-click="view.mode=1;">Back to Map</a>
-	<a class="brand" href="https://opentender.eu/mapping/" target="_blank">opentender.eu <span>Tender Landscape</span></a>
-	<br/>
-
-	<a href ng-show="view.mode!==3" class="headline" ng-click="view.mode=view.mode==1?2:1;" ng-bind="view.current.name"></a>
-	<span ng-show="view.mode==3" class="headline" ng-bind="view.country.name"></span>
-
+	<div>
+		<a href class="pull-right" ng-show="view.mode!==1" ng-click="view.mode=1;">Back to Map</a>
+		<a class="brand" href="http://digiwhist.eu/" target="_blank">digiwhist.eu <span>Tender Landscape</span></a>
+		<br/>
+		<a href ng-show="view.mode!==3" class="headline" ng-click="view.mode=view.mode==1?2:1;" ng-bind="view.current.name"></a>
+		<span ng-show="view.mode==3" class="headline" ng-bind="view.country.name"></span>
+	</div>
 </div>
+
 <div class="animate-switch-container" ng-switch on="view.mode">
 	<div class="animate-switch-right" ng-switch-when="1">
 		<div class="map" svg-map map-data="view"></div>

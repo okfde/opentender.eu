@@ -1,11 +1,11 @@
-var app = angular.module('SvgMapApp', ['ngSanitize', 'ngAnimate', 'ngDialog']);
+var app = angular.module('App', ['ngSanitize', 'ngAnimate', 'ngDialog']);
 
-app.controller('IframeCtrl', function ($scope, $rootScope, data, $location, ngDialog) {
+app.controller('IframeCtrl', function ($scope, $rootScope, data, $location) {
 	$scope.view = {
 		tables: [],
 		table: null,
 		showvalues: false,
-		mode:1,
+		mode: 1,
 		changeHoverEntry: function (entry) {
 			$scope.view.hoverEntry = entry;
 		},
@@ -23,7 +23,12 @@ app.controller('IframeCtrl', function ($scope, $rootScope, data, $location, ngDi
 	var display = function () {
 		if (!$scope.view.tables) return;
 		var searchObject = $location.search();
-		$scope.view.table = $scope.view.tables[searchObject.nr || 0];
+
+		var table = $scope.view.tables.filter(function (t) {
+			return (searchObject.nr || 1) == t.nr;
+		})[0];
+		var nr = table ? $scope.view.tables.indexOf(table) : 0;
+		$scope.view.table = $scope.view.tables[nr || 0];
 		if ($scope.view.table) {
 			if ($scope.view.table.values)
 				$scope.view.current = $scope.view.table.values[searchObject.sub || 0];
@@ -38,7 +43,7 @@ app.controller('IframeCtrl', function ($scope, $rootScope, data, $location, ngDi
 	})
 });
 
-app.controller('ToolsCtrl', function ($scope, $document, $timeout, data, ngDialog) {
+app.controller('ToolsCtrl', function ($scope, $document, $timeout, data) {
 
 	$scope.exportTSV = function (table) {
 		var tsv = data.toTSV(table);
