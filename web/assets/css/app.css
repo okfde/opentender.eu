@@ -235,19 +235,21 @@ svg {
 
 .group-view {
   border: 1px solid #d2d2d2; }
+  .group-view .cell {
+    border-left: 1px solid #d2d2d2;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 0.8em;
+    line-height: 0.85em; }
+    .group-view .cell span {
+      cursor: pointer; }
   .group-view .header-row {
     color: black;
     font-weight: 600;
     font-size: 0.9em; }
     .group-view .header-row .cell {
-      border-bottom: 1px solid #d2d2d2; }
-  .group-view .cell {
-    border-left: 1px solid #d2d2d2;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    font-size: 0.95em; }
-    .group-view .cell span {
-      cursor: pointer; }
+      border-bottom: 1px solid #d2d2d2;
+      line-height: 1.3em; }
   .group-view .cell:first-of-type, .group-view .cell.empty {
     border-left: none; }
   .group-view .active {
