@@ -377,6 +377,22 @@ svg {
 .ngdialog.ngdialog-theme-default .ngdialog-content {
   width: 80%;
   max-width: 640px;
+
+  margin-top: 4%;
+  height: 85%;
+  max-height: 85%;
+
+  .country-name {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+
+  .country-infos {
+    height: 86%;
+    max-height: 86%;
+    overflow-y: auto;
+    position: absolute;
+  }
 }
 
 .ngdialog-button {
