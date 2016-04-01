@@ -476,7 +476,7 @@
           {"id":"Cyprus","group":1},
           {"id":"Czech Republic","group":1},
           {"id":"EC","group":1},
-          {"id":"Estonia","group":1},
+          {"id":"Estonia","group":0},
           {"id":"Finland","group":1},
           {"id":"France","group":1},
           {"id":"Georgia","group":0},
@@ -516,7 +516,7 @@
           {"id":"Czech Republic","group":1},
           {"id":"Denmark","group":1},
           {"id":"EC","group":1},
-          {"id":"Estonia","group":1},
+          {"id":"Estonia","group":0},
           {"id":"Finland","group":1},
           {"id":"France","group":1},
           {"id":"Georgia","group":0},
@@ -525,7 +525,7 @@
           {"id":"Hungary","group":0},
           {"id":"Iceland","group":1},
           {"id":"Ireland","group":1},
-          {"id":"Italy","group":1},
+          {"id":"Italy","group":0},
           {"id":"Latvia","group":1},
           {"id":"Lithuania","group":1},
           {"id":"Luxembourg","group":1},
@@ -965,7 +965,9 @@
       {"id":"Netherlands", "group":1},
       {"id":"Norway", "group":1},
       {"id":"Portugal", "group":1},
+      {"id":"Romania", "group":1},
       {"id":"Serbia", "group":1},
+      {"id":"Slovenia", "group":1},
       {"id":"Slovakia", "group":1},
       {"id":"Spain", "group":1},
       {"id":"Switzerland", "group":1},
@@ -973,6 +975,7 @@
       {"id":"Finland", "group":0},
       {"id":"Georgia", "group":0},
       {"id":"Ireland", "group":0},
+      {"id":"Iceland", "group":0},
       {"id":"Malta", "group":0}
     ]
   },
@@ -1142,7 +1145,6 @@
       {"id":"Slovenia", "group":2},
 
       {"id":"Spain", "group":1},
-      {"id":"United Kingdom", "group":1},
 
       {"id":"Armenia", "group":0},
       {"id":"Austria", "group":0},
@@ -1156,7 +1158,9 @@
       {"id":"Hungary", "group":0},
       {"id":"Luxembourg", "group":0},
       {"id":"Malta", "group":0},
-      {"id":"Switzerland", "group":0}
+      {"id":"Romania", "group":0},
+      {"id":"Switzerland", "group":0},
+      {"id":"United Kingdom", "group":0}
     ]
   },
   {
