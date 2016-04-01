@@ -17,7 +17,7 @@
 					"In September 2012, the Armenian government adopted several amendments to the decree on Procurement Process Management, aimed at increasing the level of transparency and reducing corruption risks. In 2012, the e-procurement and e-payment website was launched. All open procurement state purchases were expected to be done through the e-procurement system from January 2012 onwards, but the system has faced some technical difficulties according to a report from the Business Anti-Corruption Portal."
 				],
 				"Main source assessed": [
-					"www.gnumner.am"
+					"http://www.gnumner.am"
 				]
 			},
 			"Data availability": {
@@ -67,7 +67,7 @@
 					"Auftrag.at is part of the Wiener Zeitung group, the Austrian Official Federal Gazette. Auftrag.at is the provider of Internet services for public e-procurement in the pre-awarding phase. It is mandated to publish all public tenders in Austria, but also includes all European tenders. In addition, it offers services to contracting authorities and business operators, from e-notification to e-submission."
 				],
 				"Main source assessed": [
-					"www.auftrag.at"
+					"http://www.auftrag.at"
 				]
 			},
 			"Data availability": {
@@ -176,7 +176,7 @@
 					"The Bulgarian Public Procurement Portal is operated by the Bulgarian Public Procurement Agency that is an independent body supporting the Minister of Economy, Energy and Tourism. This is a centralized information system containing information on all of the national tenders. The site includes tender information irrespective to applicable thresholds: below national threshold tenders are also frequently published. The structure of the stored information is equivalent to the EU structure. Certain introductory stages of an electronic procurement system are already implemented, such as e-Publication, e-Notification and e-Sender, e-Documentation, Questions and clarifications."
 				],
 				"Main source assessed": [
-					"www.aop.bg"
+					"http://www.aop.bg"
 				]
 			},
 			"Data availability": {
@@ -276,7 +276,7 @@
 					"In November 2009, Cyprus introduced its website for conducting public procurement competitions:  the Cyprus eProcurement System (CyePS). The CyePS has won several awards, including the Innovation Award of 2010 by OEB for the development and implementation of the eProcurement System. This recognition complements the success of the eProcurement System to classify Cyprus, first in the area of e-Procurement amongst the Member States of the EU for 2 consecutive years, the eProcurement System of the Republic of Cyprus was also awarded the Good Practice Label in the framework of the 4th European eGovernment Awards 2009."
 				],
 				"Main source assessed": [
-					"www.eprocurement.gov.cy"
+					"http://www.eprocurement.gov.cy"
 				]
 			},
 			"Data availability": {
@@ -382,7 +382,7 @@
 					"Udbud.dk gives an overview of the Danish authorities' procurement. It shows national tenders, EU procurement and government procurement plans. Since April 1, 2012, all entities must use this website to announce the purchase of goods and services covered by the Danish Act on Tender Procedures for Public Works."
 				],
 				"Main source assessed": [
-					"www.udbud.dk"
+					"http://www.udbud.dk"
 				]
 			},
 			"Data availability": {
@@ -486,7 +486,7 @@
 					"The e-procurement site was launched on 2nd February 2011. It is maintained by the Ministry of Finance, also offering overall assistance for tender participants (e.g. training). Tender documents, questions from interested parties and clarifications from contracting authorities are openly available online without registration since February 2014. Procurement document data is archived after five years, and stored for at least twenty-five years."
 				],
 				"Main source assessed": [
-					"www.riigihanked.riik.ee"
+					"http://www.riigihanked.riik.ee"
 				]
 			},
 			"Data availability": {
@@ -539,7 +539,7 @@
 					"HILMA: http://www.hankintailmoitukset.fi/fi/"
 				],
 				"Relevant links": [
-					"Public Procurement Advisory Unit:  http://www.hankinnat.fi/fi/Sivut/default.aspx"
+					"Public Procurement Advisory Unit: http://www.hankinnat.fi/fi/Sivut/default.aspx"
 				]
 			},
 			"Data availability": {
@@ -593,10 +593,10 @@
 					"A complementary platform is Marchés-Publics, an inter-ministerial website used by contracting authorities in order to organize their tender announcements. Companies can also submit electronic tenders through Marchés-Publics."
 				],
 				"Main source assessed": [
-					"www.boamp.fr"
+					"http://www.boamp.fr"
 				],
 				"Relevant links": [
-					"Marchés-publics: marches-publics.gouv.fr"
+					"Marchés-publics: http://marches-publics.gouv.fr"
 				]
 			},
 			"Data availability": {
@@ -703,7 +703,7 @@
 					"Germany does not have a unified set of public procurement regulations for tenders that fall below the EU thresholds. As a result, the publication and monitoring is decentralised at the federal state level and different local procurement portals exist. Bund.de is the main access point to the electronic information and administrative services of the German public administration and contains tenders from the federal, state and local governments as well as of vacancies in the public administration."
 				],
 				"Main source assessed": [
-					"www.bund.de"
+					"http://www.bund.de"
 				]
 			},
 			"Data availability": {
@@ -815,8 +815,8 @@
 					"http://kozbeszerzes.hu"
 				],
 				"Relevant links": [
-					"www.kozpenzkereso.eu",
-					"www.kozbeszerzes.ceu.hu"
+					"http://www.kozpenzkereso.eu",
+					"http://www.kozbeszerzes.ceu.hu"
 				]
 			},
 			"Data availability": {
@@ -1029,7 +1029,7 @@
 					"The Latvian public procurement portal (www.iub.gov.lv) is maintained by the Procurement Monitoring Bureau (Iepirkumu Uzraudzibas Birojs), under the Latvian Finance Ministry as a direct public administration institution. The central site contains both national and European level public procurement tender announcements. Although it is a decentralized public procurement system, there is an increasing trend to centralize tendering processes. The Latvian portal contains the complaint documents on tendering processes as well."
 				],
 				"Main source assessed": [
-					"www.iub.gov.lv"
+					"http://www.iub.gov.lv"
 				]
 			},
 			"Data availability": {
@@ -1240,7 +1240,7 @@
 					"TenderNed: www.tenderned.nl"
 				],
 				"Relevant links": [
-					"ABK: www.aanbestedingskalender.nl"
+					"ABK: http://www.aanbestedingskalender.nl"
 				]
 			},
 			"Data availability": {
@@ -1293,7 +1293,7 @@
 					"In late 2004, the Norwegian government initiated a procurement process for renewal of the existing tender notification services. Until July 1st 2005, public procurement notices in Norway were published in a paper-based daily gazette, but the country’s internal drive towards electronic service delivery in the public sector combined with the EU’s 2004 procurement directive, pushed the country to introduce doffin.no, the Norwegian public procurement platform, which started functioning in December 2005."
 				],
 				"Main source assessed": [
-					"www.doffin.no"
+					"http://www.doffin.no"
 				]
 			},
 			"Data availability": {
@@ -1397,7 +1397,7 @@
 					"The Portuguese Public Procurement Portal publishes information on all contracts concluded under the Public Contracts Code. It also gives access to the information system that assesses and monitors public works procurement in Portugal: the Observatório das Obras Públicas (Public Works Observatory). The portal fulfils several functions: it centralizes the most important data on public contracts that have been concluded; advertises the launch of calls for tenders and other procurement procedures, the conclusion of contracts, and any sanctions imposed; disseminates technical contents and relevant legislation and serves as a tool for citizens to monitor public spending. The portal was launched on July 30 2008 and is now managed by the Instituto da Construção e do Imobiliário, InCI (Institute of Construction and Real Estate, InCI)."
 				],
 				"Main source assessed": [
-					"www.base.gov.pt"
+					"http://www.base.gov.pt"
 				]
 			},
 			"Data availability": {
@@ -1604,10 +1604,10 @@
 					"The Slovenian central public procurement portal is maintained by the Ministry of Public Administration. It makes available all tender announcements above the national thresholds, and European level tenders are also available. Besides all of the tender related announcements, the portal also published the detailed tender documentations. Considering the e-procurement status, the portal only provides e-notification services, while e-submission is not in service yet."
 				],
 				"Main source assessed": [
-					"www.enarocanje.si"
+					"http://www.enarocanje.si"
 				],
 				"Relevant links": [
-					"rpls.si"
+					"http://rpls.si"
 				]
 			},
 			"Data availability": {
@@ -1659,7 +1659,7 @@
 					"The website is under the responsibility of the Directorate General of State Property and the Ministry of Finance and Public Administration, which have delegated its management to the General Office for the Coordination of Electronic Procurement."
 				],
 				"Main source assessed": [
-					"www.contrataciondelestado.es"
+					"http://www.contrataciondelestado.es"
 				]
 			},
 			"Data availability": {
