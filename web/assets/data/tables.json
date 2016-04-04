@@ -1140,12 +1140,12 @@
       {"id":"Iceland", "group":2,"info":"Only in certain cases"},
       {"id":"Netherlands", "group":2},
       {"id":"Norway", "group":2},
-      {"id":"Poland", "group":2,"info":"within the downloadable xml files"},
       {"id":"Serbia", "group":2},
       {"id":"Slovenia", "group":2},
 
       {"id":"Spain", "group":1},
 
+      {"id":"Poland", "group":0},
       {"id":"Armenia", "group":0},
       {"id":"Austria", "group":0},
       {"id":"Belgium", "group":0},
