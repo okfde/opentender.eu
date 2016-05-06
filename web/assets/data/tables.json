@@ -1289,7 +1289,7 @@
           {"id":"EC","value":100,"group":3}
         ]
       },
-     {
+      {
        "name":"Documentation",
        "entries": [
          {"id":"Austria","value":100,"group":3},
@@ -1329,7 +1329,7 @@
          {"id":"EC","value":75,"group":3}
        ]
      },
-     {
+      {
        "name":"Funding",
        "entries": [
          {"id":"Austria","value":50,"group":2},
@@ -1369,7 +1369,7 @@
          {"id":"EC","value":50,"group":2}
        ]
       },
-    {
+      {
       "name":"Buyer",
       "entries": [
         {"id":"Austria","value":64,"group":2},
@@ -1607,6 +1607,46 @@
           {"id":"Georgia","value":0,"group":0},
           {"id":"Armenia","value":29,"group":1},
           {"id":"EC","value":43,"group":1}
+        ]
+      },
+      {
+        "name": "On Average",
+        "entries": [
+          {"id":"Austria","value":60.73, "group":2},
+          {"id":"Belgium","value":56.73, "group":2},
+          {"id":"Bulgaria","value":62.64, "group":2},
+          {"id":"Cyprus","value":49.82, "group":1},
+          {"id":"Croatia","value":11.00, "group":0},
+          {"id":"Czech Republic","value":59.64, "group":2},
+          {"id":"Germany","value":45.09, "group":1},
+          {"id":"Denmark","value":28.64, "group":1},
+          {"id":"Estonia","value":57.73, "group":2},
+          {"id":"Spain","value":55.18, "group":2},
+          {"id":"Finland","value":21.18, "group":0},
+          {"id":"France","value":48.09, "group":1},
+          {"id":"Greece","value":54.91, "group":2},
+          {"id":"Hungary","value":76.73, "group":3},
+          {"id":"Ireland","value":14.00, "group":0},
+          {"id":"Italy","value":18.82, "group":0},
+          {"id":"Lithuania","value":67.91, "group":2},
+          {"id":"Luxembourg","value":42.00, "group":1},
+          {"id":"Latvia","value":63.82, "group":2},
+          {"id":"Malta","value":46.09, "group":1},
+          {"id":"Netherlands","value":59.09, "group":2},
+          {"id":"Poland","value":43.73, "group":1},
+          {"id":"Portugal","value":59.55, "group":2},
+          {"id":"Romania","value":51.18, "group":2},
+          {"id":"Sweden","value":0.00, "group":0},
+          {"id":"Slovenia","value":50.82, "group":2},
+          {"id":"Slovakia","value":54.55, "group":2},
+          {"id":"United Kingdom","value":14.73, "group":0},
+          {"id":"Norway","value":58.73, "group":2},
+          {"id":"Switzerland","value":30.18, "group":1},
+          {"id":"Iceland","value":31.18, "group":1},
+          {"id":"Serbia","value":37.18, "group":1},
+          {"id":"Georgia","value":40.64, "group":1},
+          {"id":"Armenia","value":24.91, "group":0},
+          {"id":"EC","value":63.73, "group":2}
         ]
       }
     ]
