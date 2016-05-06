@@ -1,5 +1,9 @@
 var app = angular.module('App', ['ngSanitize', 'ngAnimate', 'ngDialog']);
 
+app.config(['$compileProvider', function ($compileProvider) {
+	$compileProvider.debugInfoEnabled(false);
+}]);
+
 app.controller('IframeCtrl', function ($scope, $rootScope, data, $location) {
 	$scope.view = {
 		tables: [],
