@@ -9,7 +9,7 @@
 			 ng-mouseover="view.changeHoverEntry(entry)"
 			 ng-mouseleave="view.changeHoverEntry()"
 			 ng-class="{active:view.hoverEntry.country.iso==entry.country.iso}">
-			<div class="cell values-view-country" ng-bind="entry.id" ng-click="view.displayCountry(entry.country)"></div>
+			<div class="cell values-view-country" ng-bind="entry.country.name" ng-click="view.displayCountry(entry.country)"></div>
 			<div class="cell">
 				<span class="dot" backcolor="{{entry.color}}"></span>
 				<span ng-bind="entry.value"></span><span ng-bind="view.current.unit"></span>
@@ -34,7 +34,7 @@
 						 ng-mouseover="view.changeHoverEntry(cell.value)"
 						 ng-mouseleave="view.changeHoverEntry()"
 						 ng-click="view.displayCountry(cell.value.country)">
-						<span ng-bind="cell.value.id"></span><span ng-if="cell.value.info">* </span>
+						<span ng-bind="cell.value.country.name"></span><span ng-if="cell.value.info">* </span>
 					</div>
 				</div>
 			</div>

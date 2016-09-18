@@ -41,8 +41,8 @@ app.controller('IframeCtrl', function ($scope, $rootScope, data, $location) {
 		}
 	};
 
-	data.tables(function (err, tables) {
-		$scope.view.tables = tables;
+	data.init(function (d) {
+		$scope.view.tables = d.tables;
 		display();
 	})
 });
@@ -103,18 +103,44 @@ app.controller('MainCtrl', function ($scope, $document, $timeout, data, ngDialog
 			else $scope.view.current = table;
 		}
 	});
-
-	data.tables(function (err, tables) {
-		$scope.view.tables = tables;
-		$scope.view.table = tables[0];
-	})
+	data.init(function (d) {
+		$scope.view.tables = d.tables;
+		$scope.view.table = d.tables[0];
+	});
 });
 
-app.factory('data', function (countries, $http) {
+app.factory('data', function ($http) {
+
+	var data = {
+		countries: [],
+		tables: []
+	};
+
+	var countryByIso = function (iso) {
+		return data.countries.filter(function (c) {
+			return iso == c.iso;
+		})[0];
+	};
 
 	var prepareTable = function (table) {
+		table.entries = [];
+		data.countries.forEach(function (country) {
+			if (country.tables && country.tables[table.nr]) {
+				var val = country.tables[table.nr];
+				if (!isNaN(val)) {
+					table.entries.push({id: country.iso, group: val});
+				} else {
+					if (val.length == 2)
+						table.entries.push({id: country.iso, group: val[0], value: val[1]});
+					else if (val.length == 3)
+						table.entries.push({id: country.iso, group: val[0], value: val[1], info: val[2]});
+				}
+			}
+		});
+
 		if (!table.groups) {
 			var groups = [];
+
 			table.entries.forEach(function (entry) {
 				if (groups.indexOf(entry.value) < 0) groups.push(entry.value);
 			});
@@ -136,7 +162,7 @@ app.factory('data', function (countries, $http) {
 
 		var scale = chroma.scale(['#2ca25f', '#e5f5f9']).domain([0, table.groups.length], table.groups.length);//, 'quantiles');
 		table.entries.forEach(function (entry) {
-			var country = countries.byName(entry.id);
+			var country = countryByIso(entry.id);
 			if (!country) {
 				console.log('country not found', entry.id);
 			} else {
@@ -175,7 +201,23 @@ app.factory('data', function (countries, $http) {
 		table.view = pt;
 	};
 
+	var prepareData = function (d) {
+		data = d;
+		data.tables.forEach(function (table) {
+			if (table.values) {
+				table.values.forEach(function (t) {
+					t.groups = t.groups || table.groups;
+					t.unit = t.unit || table.unit;
+					prepareTable(t);
+				});
+			}
+			else prepareTable(table);
+		});
+	};
+
+
 	return {
+		countryByIso: countryByIso,
 		toTSV: function (table) {
 			var rows = [];
 			rows.push([table.nr + '. ' + table.name]);
@@ -220,21 +262,12 @@ app.factory('data', function (countries, $http) {
 			}).join('\n');
 			return tsv;
 		},
-		tables: function (cb) {
-			$http.get('../assets/data/tables.json')
+		init: function (cb) {
+			$http.get('../assets/data/data.json')
 				.then(function (result) {
-					result.data.forEach(function (table) {
-						if (table.values) {
-							table.values.forEach(function (t) {
-								t.groups = t.groups || table.groups;
-								t.unit = t.unit || table.unit;
-								prepareTable(t);
-							});
-						}
-						else prepareTable(table);
-					});
-					cb(null, result.data);
-				})
+					prepareData(result.data);
+					cb(data);
+				});
 		}
 	};
 });
@@ -259,7 +292,7 @@ app.directive('svgMap', function ($compile) {
 	}
 });
 
-app.directive('region', function ($compile, countries) {
+app.directive('region', function ($compile, data) {
 	return {
 		restrict: 'A',
 		scope: {
@@ -267,7 +300,7 @@ app.directive('region', function ($compile, countries) {
 		},
 		link: function (scope, element, attrs) {
 			scope.elementId = element.attr("id").slice(0, 2);
-			scope.country = countries.byId(scope.elementId);
+			scope.country = data.countryByIso(scope.elementId);
 			if (scope.country)
 				element.attr("title", scope.country.name);
 			else {
@@ -295,103 +328,6 @@ app.directive('region', function ($compile, countries) {
 			$compile(element)(scope);
 		}
 	}
-});
-
-app.factory('countries', function ($http) {
-	var me = this;
-	var countries = [
-		{name: "Albania", iso: "AL"},
-		{name: "Algeria", iso: "DZ"},
-		{name: "Andorra", iso: "AD"},
-		{name: "Armenia", iso: "AM"},
-		{name: "Austria", iso: "AT"},
-		{name: "Belarus", iso: "BY"},
-		{name: "Belgium", iso: "BE"},
-		{name: "Bosnia and Herzegovina", iso: "BA"},
-		{name: "Bulgaria", iso: "BG"},
-		{name: "Croatia", iso: "HR"},
-		{name: "Cyprus", iso: "CY"},
-		{name: "Czech Republic", iso: "CZ"},
-		{name: "Denmark", iso: "DK"},
-		{name: "EC", iso: "EC"},
-		{name: "Egypt", iso: "EG"},
-		{name: "Estonia", iso: "EE"},
-		{name: "Finland", iso: "FI"},
-		{name: "France", iso: "FR"},
-		{name: "Georgia", iso: "GE"},
-		{name: "Germany", iso: "DE"},
-		{name: "Greece", iso: "GR"},
-		{name: "Hungary", iso: "HU"},
-		{name: "Iceland", iso: "IS"},
-		{name: "Ireland", iso: "IE"},
-		{name: "Italy", iso: "IT"},
-		{name: "Jersey", iso: "JE"},
-		{name: "Latvia", iso: "LV"},
-		{name: "Libya", iso: "LY"},
-		{name: "Israel", iso: "IL"},
-		{name: "Liechtenstein", iso: "LI"},
-		{name: "Lithuania", iso: "LT"},
-		{name: "Luxembourg", iso: "LU"},
-		{name: "Macedonia, the Former Yugoslav Republic of", iso: "MK"},
-		{name: "Malta", iso: "MT"},
-		{name: "Moldova, Republic of", iso: "MD"},
-		{name: "Monaco", iso: "MC"},
-		{name: "Lebanon", iso: "LB"},
-		{name: "Montenegro", iso: "ME"},
-		{name: "Morocco", iso: "MA"},
-		{name: "Netherlands", iso: "NL"},
-		{name: "Norway", iso: "NO"},
-		{name: "Poland", iso: "PL"},
-		{name: "Saudi Arabia", iso: "SA"},
-		{name: "Jordan", iso: "JO"},
-		{name: "Kazakhstan", iso: "KZ"},
-		{name: "Iraq", iso: "IQ"},
-		{name: "Iran", iso: "IR"},
-		{name: "Azerbaijan", iso: "AZ"},
-		{name: "Portugal", iso: "PT"},
-		{name: "Romania", iso: "RO"},
-		{name: "Russian Federation", iso: "RU"},
-		{name: "San Marino", iso: "SM"},
-		{name: "Serbia", iso: "RS"},
-		{name: "Syria", iso: "SY"},
-		{name: "Slovakia", iso: "SK"},
-		{name: "Slovenia", iso: "SI"},
-		{name: "Spain", iso: "ES"},
-		{name: "Suriname", iso: "SR"},
-		{name: "Sweden", iso: "SE"},
-		{name: "Switzerland", iso: "CH"},
-		{name: "Tunisia", iso: "TN"},
-		{name: "Turkey", iso: "TR"},
-		{name: "Ukraine", iso: "UA"},
-		{name: "United Kingdom", iso: "GB"}
-	];
-
-	countries.forEach(function (c) {
-		c.iso = c.iso.toLowerCase();
-	});
-
-	$http.get('../assets/data/countries.json').then(function (result) {
-		result.data.forEach(function (d) {
-			if (d.name == 'European Commission') d.name = 'EC';
-			var c = me.byName(d.name);
-			if (!c) console.log('missing country info', d.name);
-			else c.info = d.values;
-		});
-	});
-
-	me.byName = function (name) {
-		return countries.filter(function (c) {
-			return name == c.name;
-		})[0];
-	};
-
-	me.byId = function (id) {
-		return countries.filter(function (c) {
-			return id == c.iso;
-		})[0];
-	};
-
-	return me;
 });
 
 app.directive('backcolor', function () {

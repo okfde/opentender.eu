@@ -18,13 +18,11 @@
 	<script src="../assets/js/app.js"></script>
 </head>
 <body ng-controller="MainCtrl">
-
 <header>
 	<div class="grid-container">
 		<div class="grid-cell-80 title"><h1>D1.1 Towards a comprehensive mapping of information on public procurement tendering and its actors across Europe</h1></div>
 	</div>
 </header>
-
 <div class="grid-container">
 	<div class="grid-cell-25">
 		<div class="table-list">
@@ -36,16 +34,12 @@
 			</div>
 		</div>
 	</div>
-
 	<div class="grid-cell-75">
-
 		<div>
 			<div class="tools pull-right" ng-controller="ToolsCtrl">
 				<a href ng-click="view.showvalues=!view.showvalues"><i title="See {{view.showvalues?'Groups':'Values'}}" ng-class="{'icon-flow-cascade':view.showvalues,'icon-list':!view.showvalues}"></i></a>
 				<a href ng-click="exportTSV(view.table)"><i title="Download as TSV" class="icon-download"></i></a>
 			</div>
-
-
 			<h2><span ng-bind="view.table.nr"></span>. <span ng-bind="view.table.name"></span></h2>
 			<div ng-if="view.table.values" class="tab-host">
 				<div ng-repeat="vals in view.table.values" ng-click="view.current = vals"
@@ -61,27 +55,24 @@
 						<div class="cell" ng-repeat="group in view.current.groups" backcolor="{{group.color}}" ng-bind="group.name"></div>
 					</div>
 				</div>
-				<div class="selected-country" ng-show="view.hoverEntry">
-					<div class="subtitle" ng-bind="view.hoverEntry.country.name"></div>
-					<div class="value">
-						<span ng-bind="view.hoverEntry.value"></span><span ng-bind="view.current.unit"></span>
-						<div ng-if="!(view.hoverEntry.value.length>0)" ng-bind="view.current.groups[view.hoverEntry.group].name"></div>
+				<div class="selected-country">
+					<div ng-show="view.hoverEntry">
+						<div class="subtitle" ng-bind="view.hoverEntry.country.name"></div>
+						<div class="value">
+							<span ng-bind="view.hoverEntry.value"></span><span ng-bind="view.current.unit"></span>
+							<div ng-if="!(view.hoverEntry.value.length>0)" ng-bind="view.current.groups[view.hoverEntry.group].name"></div>
+						</div>
+						<div class="info" ng-if="view.hoverEntry.info" ng-bind="view.hoverEntry.info"></div>
+						<span ng-if="(view.hoverEntry.value.length>0) && (view.hoverEntry.value!==view.current.groups[view.hoverEntry.group].name)" class="subtitle" ng-bind="view.current.groups[view.hoverEntry.group].name"></span>
 					</div>
-					<div class="info" ng-if="view.hoverEntry.info" ng-bind="view.hoverEntry.info"></div>
-					<span ng-if="(view.hoverEntry.value.length>0) && (view.hoverEntry.value!==view.current.groups[view.hoverEntry.group].name)" class="subtitle" ng-bind="view.current.groups[view.hoverEntry.group].name"></span>
 				</div>
 			</div>
 			<div class="grid-cell-50">
-
 				<div ng-include="'../assets/partials/table.html'"></div>
-
 			</div>
 		</div>
-
-
 	</div>
 </div>
-
 
 </body>
 </html>

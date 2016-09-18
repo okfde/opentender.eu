@@ -1,4 +1,4 @@
-@import "../bower_components/minimal-grid/sass/partials/minimal-grid";
+@import "../bower_components/minimal-grid/sass/partials/_minimal-grid";
 
 $border-color: #d2d2d2;
 $text-color: #333;
@@ -46,7 +46,10 @@ header {
 }
 
 .grid-container {
-  @extend %grid-container;
+  //@extend %grid-container;
+  max-width: $minimal-grid-container-max-width;
+  margin: 0 auto;
+  @include clearfix;
 
   .grid-cell-100 {
     display: inline-block;
@@ -110,8 +113,12 @@ header {
 a {
   color: $text-color;
   text-decoration: none;
-  &:hover, &.active {
+  &:hover {
     text-decoration: underline;
+    color: $text-color-bold;
+  }
+  &.active {
+    background-color: #fffbd2;
     color: $text-color-bold;
   }
 }
@@ -349,11 +356,16 @@ svg {
 }
 
 .selected-country {
-  border: 1px solid $border-color;
-  border-radius: 3px;
-  padding: 8px;
-  padding-left: 14px;
-  padding-right: 14px;
+  min-height: 100px;
+  margin-bottom: 10px;
+
+  > div {
+    border: 1px solid $border-color;
+    border-radius: 3px;
+    padding: 8px;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
   .title {
     color: $text-color-bold;
     font-weight: $font-weight-bold;
@@ -376,13 +388,13 @@ svg {
   .ngdialog-content {
     width: 80%;
     max-width: 640px;
-
+    font-size: 1.0em;
     margin-top: 4%;
     height: 85%;
     max-height: 85%;
 
     .country-name {
-      font-size: 2em;
+      font-size: 1.5em;
       margin-bottom: 10px;
     }
 

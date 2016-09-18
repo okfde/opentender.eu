@@ -16,10 +16,9 @@
 		app.controller('IFrameTestCtrl', function ($scope, $document, $timeout, $sce, data) {
 
 			$scope.selected = {};
-			data.tables(function (err, tables) {
-				$scope.tables = tables;
-				$scope.selected.table = tables[0];
-				console.log($scope.selected.table);
+			data.init(function (d) {
+				$scope.tables = d.tables;
+				$scope.selected.table = d.tables[0];
 			});
 			$scope.dims = [
 				{w: 800, h: 685},

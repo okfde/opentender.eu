@@ -1,29 +1,12 @@
 /*--------------------------------------------------------------
-Minimal Grid
-Author: AaronRutley
-Version: 1.0.1
+Minimal Grid by @aaronrutley
+Version: 2.0.0
 Github: https://github.com/AaronRutley/minimal-grid
-
 --------------------------------------------------------------*/
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
-
-.grid-container:after {
-  content: "";
-  display: table;
-  clear: both; }
-
-.grid-container > section {
-  padding-left: 10px;
-  padding-right: 10px;
-  display: inline-block;
-  float: left; }
-
-.grid-container {
-  max-width: 1200px;
-  margin: 0 auto; }
 
 *, *::after, *::before {
   box-sizing: border-box; }
@@ -56,63 +39,73 @@ header {
   color: #fff;
   margin-bottom: 10px; }
 
-.grid-container .grid-cell-100 {
-  display: inline-block;
-  float: left;
-  padding-left: 10px;
-  padding-right: 10px;
-  width: 100%; }
-.grid-container .grid-cell-50 {
-  display: inline-block;
-  float: left;
-  padding-left: 10px;
-  padding-right: 10px;
-  width: 100%; }
-  @media only screen and (min-width: 50em) {
-    .grid-container .grid-cell-50 {
-      width: 50%; } }
-.grid-container .grid-cell-20 {
-  display: inline-block;
-  float: left;
-  padding-left: 10px;
-  padding-right: 10px;
-  width: 100%; }
-  @media only screen and (min-width: 50em) {
-    .grid-container .grid-cell-20 {
-      width: 20%; } }
-.grid-container .grid-cell-25 {
-  display: inline-block;
-  float: left;
-  padding-left: 10px;
-  padding-right: 10px;
-  width: 100%; }
-  @media only screen and (min-width: 50em) {
-    .grid-container .grid-cell-25 {
-      width: 25%; } }
-.grid-container .grid-cell-80 {
-  display: inline-block;
-  float: left;
-  padding-left: 10px;
-  padding-right: 10px;
-  width: 100%; }
-  @media only screen and (min-width: 50em) {
-    .grid-container .grid-cell-80 {
-      width: 80%; } }
-.grid-container .grid-cell-75 {
-  display: inline-block;
-  float: left;
-  padding-left: 10px;
-  padding-right: 10px;
-  width: 100%; }
-  @media only screen and (min-width: 50em) {
-    .grid-container .grid-cell-75 {
-      width: 75%; } }
+.grid-container {
+  max-width: 1200px;
+  margin: 0 auto; }
+  .grid-container:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .grid-container .grid-cell-100 {
+    display: inline-block;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%; }
+  .grid-container .grid-cell-50 {
+    display: inline-block;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%; }
+    @media only screen and (min-width: 50em) {
+      .grid-container .grid-cell-50 {
+        width: 50%; } }
+  .grid-container .grid-cell-20 {
+    display: inline-block;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%; }
+    @media only screen and (min-width: 50em) {
+      .grid-container .grid-cell-20 {
+        width: 20%; } }
+  .grid-container .grid-cell-25 {
+    display: inline-block;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%; }
+    @media only screen and (min-width: 50em) {
+      .grid-container .grid-cell-25 {
+        width: 25%; } }
+  .grid-container .grid-cell-80 {
+    display: inline-block;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%; }
+    @media only screen and (min-width: 50em) {
+      .grid-container .grid-cell-80 {
+        width: 80%; } }
+  .grid-container .grid-cell-75 {
+    display: inline-block;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%; }
+    @media only screen and (min-width: 50em) {
+      .grid-container .grid-cell-75 {
+        width: 75%; } }
 
 a {
   color: #333;
   text-decoration: none; }
-  a:hover, a.active {
+  a:hover {
     text-decoration: underline;
+    color: black; }
+  a.active {
+    background-color: #fffbd2;
     color: black; }
 
 .tableview {
@@ -280,11 +273,14 @@ svg {
     padding: 5px 0; }
 
 .selected-country {
-  border: 1px solid #d2d2d2;
-  border-radius: 3px;
-  padding: 8px;
-  padding-left: 14px;
-  padding-right: 14px; }
+  min-height: 100px;
+  margin-bottom: 10px; }
+  .selected-country > div {
+    border: 1px solid #d2d2d2;
+    border-radius: 3px;
+    padding: 8px;
+    padding-left: 14px;
+    padding-right: 14px; }
   .selected-country .title {
     color: black;
     font-weight: 600;
@@ -302,11 +298,12 @@ svg {
   .ngdialog.ngdialog-theme-default .ngdialog-content {
     width: 80%;
     max-width: 640px;
+    font-size: 1.0em;
     margin-top: 4%;
     height: 85%;
     max-height: 85%; }
     .ngdialog.ngdialog-theme-default .ngdialog-content .country-name {
-      font-size: 2em;
+      font-size: 1.5em;
       margin-bottom: 10px; }
     .ngdialog.ngdialog-theme-default .ngdialog-content .country-infos {
       height: 86%;
