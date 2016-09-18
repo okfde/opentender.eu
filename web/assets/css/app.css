@@ -112,6 +112,10 @@ a {
   padding-top: 8px;
   padding-bottom: 8px; }
 
+.table-container {
+  display: block;
+  clear: both; }
+
 .table-list {
   margin-top: 15px;
   list-style: none;
@@ -200,7 +204,10 @@ a {
   text-align: center; }
 
 .tools {
-  margin-right: 20px; }
+  margin-right: 10px;
+  margin-bottom: 1px; }
+  .tools .tool-title {
+    font-size: 0.8em; }
 
 svg {
   border: 1px solid #d2d2d2;
@@ -232,7 +239,7 @@ svg {
     border-left: 1px solid #d2d2d2;
     padding-top: 2px;
     padding-bottom: 2px;
-    font-size: 0.8em;
+    font-size: 0.9em;
     line-height: 0.85em; }
     .group-view .cell span {
       cursor: pointer; }
@@ -255,6 +262,7 @@ svg {
   .values-view .header-row .cell {
     border-bottom: 1px solid #d2d2d2; }
 .values-view .cell {
+  font-size: 0.9em;
   border-top: 1px solid #d2d2d2; }
 .values-view .values-view-country {
   cursor: pointer; }

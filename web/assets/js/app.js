@@ -51,7 +51,7 @@ app.controller('ToolsCtrl', function ($scope, $document, $timeout, data) {
 
 	$scope.exportTSV = function (table) {
 		var tsv = data.toTSV(table);
-		var filename = table.name.toLowerCase().replace(/ /g, '_').replace(/,/g, '') + ".tsv";
+		var filename = 'd1.1-' + table.nr + '.tsv';//name.toLowerCase().replace(/ /g, '_').replace(/,/g, '') + ".tsv";
 		var charset = "utf-8";
 		var blob = new Blob([tsv], {
 			type: "text/tsv;charset=" + charset + ";"
@@ -137,7 +137,6 @@ app.factory('data', function ($http) {
 				}
 			}
 		});
-
 		if (!table.groups) {
 			var groups = [];
 
@@ -159,7 +158,6 @@ app.factory('data', function ($http) {
 				entry.group = 0;
 			});
 		}
-
 		var scale = chroma.scale(['#2ca25f', '#e5f5f9']).domain([0, table.groups.length], table.groups.length);//, 'quantiles');
 		table.entries.forEach(function (entry) {
 			var country = countryByIso(entry.id);
@@ -215,7 +213,6 @@ app.factory('data', function ($http) {
 		});
 	};
 
-
 	return {
 		countryByIso: countryByIso,
 		toTSV: function (table) {
@@ -227,7 +224,7 @@ app.factory('data', function ($http) {
 				rows.push([]);
 				table.entries.forEach(function (entry) {
 					var row = [];
-					row.push(entry.id);
+					row.push(entry.country.name);
 					row.push(entry.value);
 					row.push(table.groups[entry.group].name);
 					row.push(entry.info);

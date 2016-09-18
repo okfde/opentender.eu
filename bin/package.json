@@ -1,0 +1,16 @@
+{
+  "name": "bin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build-data.js",
+  "dependencies": {
+    "pn": "^1.0.0",
+    "svg2png": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

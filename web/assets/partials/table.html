@@ -1,21 +1,23 @@
 <div ng-switch="view.showvalues">
 	<div class="values-view" ng-switch-when="true">
-		<div class="row header-row">
-			<div class="cell">Name</div>
-			<div class="cell">Value</div>
-			<div class="cell">Info</div>
-		</div>
-		<div class="row" ng-repeat="entry in view.current.entries"
-			 ng-mouseover="view.changeHoverEntry(entry)"
-			 ng-mouseleave="view.changeHoverEntry()"
-			 ng-class="{active:view.hoverEntry.country.iso==entry.country.iso}">
-			<div class="cell values-view-country" ng-bind="entry.country.name" ng-click="view.displayCountry(entry.country)"></div>
-			<div class="cell">
-				<span class="dot" backcolor="{{entry.color}}"></span>
-				<span ng-bind="entry.value"></span><span ng-bind="view.current.unit"></span>
-				<span ng-if="entry.value==null" ng-bind="view.current.groups[entry.group].name"></span>
+		<div class="table">
+			<div class="row header-row">
+				<div class="cell">Name</div>
+				<div class="cell">Value</div>
+				<div class="cell">Info</div>
 			</div>
-			<div class="cell" ng-bind="entry.info"></div>
+			<div class="row" ng-repeat="entry in view.current.entries"
+				 ng-mouseover="view.changeHoverEntry(entry)"
+				 ng-mouseleave="view.changeHoverEntry()"
+				 ng-class="{active:view.hoverEntry.country.iso==entry.country.iso}">
+				<div class="cell values-view-country" ng-bind="entry.country.name" ng-click="view.displayCountry(entry.country)"></div>
+				<div class="cell">
+					<span class="dot" backcolor="{{entry.color}}"></span>
+					<span ng-bind="entry.value"></span><span ng-bind="view.current.unit"></span>
+					<span ng-if="entry.value==null" ng-bind="view.current.groups[entry.group].name"></span>
+				</div>
+				<div class="cell" ng-bind="entry.info"></div>
+			</div>
 		</div>
 	</div>
 	<div class="group-view" ng-switch-when="false">
