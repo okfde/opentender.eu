@@ -269,6 +269,45 @@ app.factory('data', function ($http) {
 	};
 });
 
+function isCrapBrowser() {
+	var ua = window.navigator.userAgent;
+	if (ua.indexOf('Trident/7.0') > 0) {
+		return true;
+	} else if (ua.indexOf('Trident/6.0') > 0) {
+		return true;
+	} else if (ua.indexOf('Trident/5.0') > 0) {
+		return true;
+	} else if ((nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1) && !(nua.indexOf('Chrome') > -1)) {
+		return true;
+	}
+	return false;  // not IE9, 10 or 11
+}
+
+function fixThisSVG(svg) {
+	if (!isCrapBrowser()) return;
+	var width = svg.getAttribute('width');
+	var height = svg.getAttribute('height');
+	if (width && height && !svg.getAttribute('data-ignore-svg-polyfill')) {
+		var ratio = (parseInt(height, 10) / parseInt(width, 10) * 100) + '%';
+		var wrapper = document.createElement('div');
+		var spacer = document.createElement('div');
+		spacer.setAttribute('style', 'display: block; padding-bottom: ' + ratio);
+		wrapper.setAttribute('style', 'position: relative;');
+		wrapper.appendChild(spacer);
+		svg.parentNode.appendChild(wrapper);
+		svg.setAttribute('style', 'display: block; width: 100%; position: absolute; top: 0; left: 0; bottom: 0;');
+		wrapper.appendChild(svg);
+	}
+}
+
+// function fixSizes() {
+// 	[...document.querySelectorAll('svg')].forEach(fixThisSVG);
+// }
+//
+// export default function init() {
+// 	fixSizes();
+// }
+
 app.directive('svgMap', function ($compile) {
 	return {
 		restrict: 'A',
@@ -284,6 +323,10 @@ app.directive('svgMap', function ($compile) {
 				regionElement.attr("fill", '#b8b8b8');
 				regionElement.attr("map-data", "mapData");
 				$compile(regionElement)(scope);
+			});
+			var svgs = element[0].querySelectorAll('svg');
+			angular.forEach(svgs, function (svg, key) {
+				fixThisSVG(svg);
 			});
 		}
 	}

@@ -262,6 +262,7 @@ a {
 svg {
   border: 1px solid $border-color;
   display: block;
+  overflow: hidden;
 
   .country {
     stroke-width: 0.5;
