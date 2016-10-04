@@ -125,7 +125,7 @@ app.factory('data', function ($http) {
 	var prepareTable = function (table) {
 		table.entries = [];
 		data.countries.forEach(function (country) {
-			if (country.tables && country.tables[table.nr]) {
+			if (country.tables && (country.tables[table.nr] !== undefined)) {
 				var val = country.tables[table.nr];
 				if (!isNaN(val)) {
 					table.entries.push({id: country.iso, group: val});
@@ -241,7 +241,7 @@ app.factory('data', function ($http) {
 						while (c[e.id].length < cols.length) {
 							c[e.id].push('');
 						}
-						if (e.value == null) {
+						if (e.value === null || e.value === undefined) {
 							c[e.id][cols.length - 2] = t.groups[e.group].name;
 						} else {
 							c[e.id][cols.length - 2] = e.value;
@@ -277,7 +277,7 @@ function isCrapBrowser() {
 		return true;
 	} else if (ua.indexOf('Trident/5.0') > 0) {
 		return true;
-	} else if ((nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1) && !(nua.indexOf('Chrome') > -1)) {
+	} else if ((ua.indexOf('Mozilla/5.0') > -1 && ua.indexOf('Android ') > -1 && ua.indexOf('AppleWebKit') > -1) && !(ua.indexOf('Chrome') > -1)) {
 		return true;
 	}
 	return false;  // not IE9, 10 or 11
