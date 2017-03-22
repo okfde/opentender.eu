@@ -44,6 +44,7 @@ app.controller('IframeCtrl', function ($scope, $rootScope, data, $location) {
 	data.init(function (d) {
 		$scope.view.tables = d.tables;
 		display();
+		$scope.view.dataloaded = true;
 	})
 });
 
@@ -79,6 +80,7 @@ app.controller('MainCtrl', function ($scope, $document, $timeout, data, ngDialog
 		tables: [],
 		table: null,
 		showvalues: false,
+		dataloaded: false,
 		changeHoverEntry: function (entry) {
 			$scope.view.hoverEntry = entry;
 		},
@@ -162,7 +164,7 @@ app.factory('data', function ($http) {
 		table.entries.forEach(function (entry) {
 			var country = countryByIso(entry.id);
 			if (!country) {
-				console.log('country not found', entry.id);
+				console.log('table country not found', entry.id);
 			} else {
 				entry.country = country;
 			}
@@ -339,12 +341,12 @@ app.directive('region', function ($compile, data) {
 			mapData: "="
 		},
 		link: function (scope, element, attrs) {
-			scope.elementId = element.attr("id").slice(0, 2);
+			scope.elementId = angular.element(element).attr("id").slice(0, 2);
 			scope.country = data.countryByIso(scope.elementId);
 			if (scope.country)
 				element.attr("title", scope.country.name);
 			else {
-				console.log('country not found', scope.elementId);
+				console.log('region country not found', scope.elementId);
 			}
 
 			scope.regionMouseOver = function () {

@@ -48,7 +48,7 @@
 				<div class="tools pull-right" ng-controller="ToolsCtrl">
 					<a href ng-href="../assets/images/d1.1-{{view.current.nr}}.png" ng-attr-download="d1.1-{{view.current.nr}}.png" target="_blank" title="Download Map as PNG"><i class="icon-download"></i><span class="tool-title">Download Map</span></a>
 				</div>
-				<div svg-map map-data="view"></div>
+				<div ng-if="view.data_loaded" svg-map map-data="view"></div>
 				<div class="legend table">
 					<div class="row">
 						<div class="cell" ng-repeat="group in view.current.groups" backcolor="{{group.color}}" ng-bind="group.name"></div>
