@@ -9,13 +9,13 @@
 	<link rel="stylesheet" type="text/css" href="../assets/bower_components/entypo/font/entypo.css">
 	<link rel="stylesheet" type="text/css" href="../assets/bower_components/ng-dialog/css/ngDialog.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/bower_components/ng-dialog/css/ngDialog-theme-default.css">
-	<link rel="stylesheet" type="text/css" href="../assets/css/app.css"/>
+	<link rel="stylesheet" type="text/css" href="./assets/css/app.css"/>
 	<script src="../assets/bower_components/chroma-js/chroma.min.js"></script>
 	<script src="../assets/bower_components/angular/angular.min.js"></script>
 	<script src="../assets/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
 	<script src="../assets/bower_components/angular-animate/angular-animate.min.js"></script>
 	<script src="../assets/bower_components/ng-dialog/js/ngDialog.min.js"></script>
-	<script src="../assets/js/app.js"></script>
+	<script src="./assets/js/app.js"></script>
 </head>
 <body class="iframe" ng-controller="IframeCtrl">
 <div class="header">
@@ -42,7 +42,7 @@
 			<a href ng-click="view.showvalues=!view.showvalues"><i title="See {{view.showvalues?'Groups':'Values'}}" ng-class="{'icon-flow-cascade':view.showvalues,'icon-list':!view.showvalues}"></i></a>
 			<a href ng-click="exportTSV(view.table)"><i title="Download as TSV" class="icon-download"></i></a>
 		</div>
-		<div ng-include="'../assets/partials/table.html'"></div>
+		<div ng-include="'./assets/partials/table.html'"></div>
 	</div>
 	<div class="animate-switch-left" ng-switch-when="3">
 		<div class="grid-container">

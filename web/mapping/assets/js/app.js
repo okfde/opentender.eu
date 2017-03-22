@@ -10,6 +10,7 @@ app.controller('IframeCtrl', function ($scope, $rootScope, data, $location) {
 		table: null,
 		showvalues: false,
 		mode: 1,
+		dataloaded: false,
 		changeHoverEntry: function (entry) {
 			$scope.view.hoverEntry = entry;
 		},
@@ -86,7 +87,7 @@ app.controller('MainCtrl', function ($scope, $document, $timeout, data, ngDialog
 		},
 		displayCountry: function (country) {
 			ngDialog.open({
-				template: '../assets/partials/country.html',
+				template: './assets/partials/country.html',
 				controller: function ($scope) {
 					$scope.country = country;
 					$scope.view = {section: 'Info'};
@@ -108,6 +109,7 @@ app.controller('MainCtrl', function ($scope, $document, $timeout, data, ngDialog
 	data.init(function (d) {
 		$scope.view.tables = d.tables;
 		$scope.view.table = d.tables[0];
+		$scope.view.dataloaded = true;
 	});
 });
 
@@ -262,7 +264,7 @@ app.factory('data', function ($http) {
 			return tsv;
 		},
 		init: function (cb) {
-			$http.get('../assets/data/data.json')
+			$http.get('./assets/data/data.json')
 				.then(function (result) {
 					prepareData(result.data);
 					cb(data);
@@ -313,7 +315,7 @@ function fixThisSVG(svg) {
 app.directive('svgMap', function ($compile) {
 	return {
 		restrict: 'A',
-		templateUrl: '../assets/svg/borders_iso.svg',
+		templateUrl: './assets/svg/borders_iso.svg',
 		scope: {
 			mapData: "="
 		},

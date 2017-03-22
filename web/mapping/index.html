@@ -9,13 +9,13 @@
 	<link rel="stylesheet" type="text/css" href="../assets/bower_components/entypo/font/entypo.css">
 	<link rel="stylesheet" type="text/css" href="../assets/bower_components/ng-dialog/css/ngDialog.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/bower_components/ng-dialog/css/ngDialog-theme-default.css">
-	<link rel="stylesheet" type="text/css" href="../assets/css/app.css"/>
+	<link rel="stylesheet" type="text/css" href="./assets/css/app.css"/>
 	<script src="../assets/bower_components/chroma-js/chroma.min.js"></script>
 	<script src="../assets/bower_components/angular/angular.min.js"></script>
 	<script src="../assets/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
 	<script src="../assets/bower_components/angular-animate/angular-animate.min.js"></script>
 	<script src="../assets/bower_components/ng-dialog/js/ngDialog.min.js"></script>
-	<script src="../assets/js/app.js"></script>
+	<script src="./assets/js/app.js"></script>
 </head>
 <body ng-controller="MainCtrl">
 <header>
@@ -46,9 +46,9 @@
 		<div class="grid-container tableview" ng-if="view.current">
 			<div class="grid-cell-50">
 				<div class="tools pull-right" ng-controller="ToolsCtrl">
-					<a href ng-href="../assets/images/d1.1-{{view.current.nr}}.png" ng-attr-download="d1.1-{{view.current.nr}}.png" target="_blank" title="Download Map as PNG"><i class="icon-download"></i><span class="tool-title">Download Map</span></a>
+					<a href ng-href="./assets/images/d1.1-{{view.current.nr}}.png" ng-attr-download="d1.1-{{view.current.nr}}.png" target="_blank" title="Download Map as PNG"><i class="icon-download"></i><span class="tool-title">Download Map</span></a>
 				</div>
-				<div ng-if="view.data_loaded" svg-map map-data="view"></div>
+				<div ng-if="view.dataloaded" svg-map map-data="view"></div>
 				<div class="legend table">
 					<div class="row">
 						<div class="cell" ng-repeat="group in view.current.groups" backcolor="{{group.color}}" ng-bind="group.name"></div>
@@ -73,7 +73,7 @@
 						<a href ng-click="exportTSV(view.table)" ng-attr-download="d1.1-{{view.current.nr}}.tsv" title="Download as TSV"><i class="icon-download"></i><span class="tool-title">Download Data</span></a>
 					</div>
 				</div>
-				<div class="table-container" ng-include="'../assets/partials/table.html'"></div>
+				<div class="table-container" ng-include="'./assets/partials/table.html'"></div>
 			</div>
 		</div>
 	</div>
