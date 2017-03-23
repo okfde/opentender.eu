@@ -23,7 +23,8 @@
     "chroma-js": "~1.1.1",
     "angular-animate": "~1.5.0",
     "bootstrap": "^3.3.7",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "chartist": "^0.10.1"
   },
   "resolutions": {
     "angular": "1.5.8"

@@ -28,6 +28,8 @@ a {
   .btn.btn-red {
     background-color: #dd5138;
     color: #fff; }
+    .btn.btn-red:hover {
+      background-color: #de5941; }
   .btn.btn-yellow {
     background-color: #fcd93b;
     color: #2a2a2a;
@@ -36,6 +38,9 @@ a {
     opacity: 1; }
   .btn.btn-yellow.disabled:hover, .btn.btn-yellow[disabled]:hover {
     opacity: 0.65; }
+  .btn.btn-multiline {
+    max-width: 450px;
+    font-size: 0.9em; }
 
 .section-head {
   background-color: #deddde;
@@ -90,7 +95,19 @@ a {
   width: 460px;
   padding: 30px;
   margin-left: 40px;
-  margin-top: 200px; }
+  margin-top: 0; }
+  .framebox.framebox-margin-top {
+    margin-top: 200px; }
+
+.table-condensed {
+  font-size: 0.8em; }
+
+.centerbox {
+  display: block;
+  margin-top: 30px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 80px; }
 
 .legend {
   font-size: 0.7em; }
@@ -130,7 +147,7 @@ a {
 
 .side-menu {
   position: fixed;
-  right: 30px;
+  right: 20px;
   top: 50%;
   transform: translateY(-73px);
   z-index: 99; }
@@ -138,13 +155,18 @@ a {
     list-style: none; }
     .side-menu ul li {
       text-align: right;
-      margin: 10px 0;
-      cursor: pointer; }
+      margin: 8px 0;
+      cursor: pointer;
+      height: 30px;
+      max-height: 30px;
+      min-height: 30px; }
       .side-menu ul li a span {
         display: inline-block; }
         .side-menu ul li a span.menu-title {
           color: #fff;
           position: relative;
+          margin: 0;
+          vertical-align: middle;
           margin-right: 10px;
           text-transform: uppercase;
           font-size: 12px;
@@ -161,12 +183,16 @@ a {
           -o-transform-origin: 100% 50%;
           transform-origin: 100% 50%;
           display: none;
-          opacity: 0; }
+          opacity: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
         .side-menu ul li a span.dot {
           position: relative;
           background-color: #dd5138;
           border-radius: 2em;
           height: 10px;
+          vertical-align: middle;
           width: 10px;
           -webkit-transition: all 0.3s;
           -moz-transition: all 0.3s;
@@ -178,6 +204,9 @@ a {
         transform: scale(1.8); }
       .side-menu ul li.active span.dot {
         background-color: black; }
+  .side-menu.expanded ul li a span.menu-title {
+    display: inline-block;
+    opacity: 1; }
   .side-menu nav, .side-menu nav.li, .side-menu a {
     margin: 0;
     padding: 0;
@@ -225,8 +254,11 @@ a {
       text-align: left;
       padding: 0.1ex 0 0 1.2ex; }
 
-#home {
+.section-transparency {
   background: #235872; }
+
+.section-guide {
+  background: #7da79c; }
 
 .hero-header {
   min-height: 600px;
@@ -251,16 +283,110 @@ a {
     padding: 8px; }
   .hero-header .btn {
     margin-top: 3em; }
+  .hero-header .buttons {
+    display: block; }
+  .hero-header .more {
+    font-size: 0.9em;
+    margin-top: 40px;
+    max-width: 460px; }
+    .hero-header .more .btn {
+      margin-top: 8px; }
 
 .me-row {
   padding: 30px 0; }
 
+.inline-footnote {
+  font-size: 0.7em;
+  text-transform: uppercase;
+  font-weight: 700; }
+
+.section-affix {
+  width: 100%;
+  text-align: center;
+  background-color: #deddde;
+  height: 60px;
+  top: 0;
+  z-index: 10;
+  padding: 10px;
+  font-size: 14px; }
+  .section-affix h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: black;
+    font-weight: 400; }
+
+.affix-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  .affix-menu ul li {
+    display: none;
+    margin: 0;
+    padding: 0; }
+    .affix-menu ul li a {
+      margin: 0;
+      color: black;
+      padding: 0; }
+      .affix-menu ul li a:hover {
+        color: black; }
+.affix-menu ul li.active {
+  display: inline-block; }
+
 /* Mobile */
+@media (max-width: 500px) {
+  .side-menu ul li a span.menu-title {
+    max-width: 220px; }
+
+  .section-affix h3 {
+    font-size: 0.8em; }
+
+  .section-head h2 {
+    font-size: 0.8em; }
+
+  .section h3 {
+    margin-top: 20px; } }
+.chart-legend {
+  padding-left: 60px; }
+
+.chart-container-right {
+  max-width: 500px;
+  float: right; }
+
+.chart-container {
+  margin-top: 40px;
+  margin-bottom: 40px; }
+
+.chart {
+  width: 100%; }
+
+.ct-chart-bars-1 line.ct-bar {
+  stroke: #66a4d9; }
+
+.ct-chart-bars-2 line.ct-bar {
+  stroke: #92d0b4; }
+
+.ct-label {
+  font-size: 10px;
+  color: #595959; }
+
+.ct-chart-bar.ct-horizontal-bars .ct-label.ct-vertical.ct-start {
+  -webkit-box-align: flex-end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  -webkit-box-pack: flex-end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: flex-end;
+  justify-content: flex-end;
+  text-align: right;
+  text-anchor: end;
+  padding-bottom: 2px; }
+
 @media (max-width: 767px) {
   .hero-header {
     padding: 3em 1em 1em 1em;
-    text-align: center;
-    max-height: 550px; } }
+    text-align: center; } }
 /* iPad Portrait */
 @media (min-width: 768px) and (max-width: 991px) {
   .hero-header {
