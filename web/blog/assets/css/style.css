@@ -90,15 +90,6 @@ a {
     padding-left: 12px;
     padding-right: 50px; }
 
-.framebox {
-  float: right;
-  width: 460px;
-  padding: 30px;
-  margin-left: 40px;
-  margin-top: 0; }
-  .framebox.framebox-margin-top {
-    margin-top: 200px; }
-
 .table-condensed {
   font-size: 0.8em; }
 
@@ -295,10 +286,10 @@ a {
 .me-row {
   padding: 30px 0; }
 
-.inline-footnote {
-  font-size: 0.7em;
-  text-transform: uppercase;
-  font-weight: 700; }
+.inline-footnote:before {
+  content: "["; }
+.inline-footnote:after {
+  content: "]"; }
 
 .section-affix {
   width: 100%;
@@ -346,13 +337,6 @@ a {
 
   .section h3 {
     margin-top: 20px; } }
-.chart-legend {
-  padding-left: 60px; }
-
-.chart-container-right {
-  max-width: 500px;
-  float: right; }
-
 .chart-container {
   margin-top: 40px;
   margin-bottom: 40px; }
@@ -361,9 +345,12 @@ a {
   width: 100%; }
 
 .ct-chart-bars-1 line.ct-bar {
-  stroke: #66a4d9; }
+  stroke: #92d0b4; }
 
 .ct-chart-bars-2 line.ct-bar {
+  stroke: #92d0b4; }
+
+.ct-chart-bars-3 line.ct-bar {
   stroke: #92d0b4; }
 
 .ct-label {
@@ -383,15 +370,97 @@ a {
   text-anchor: end;
   padding-bottom: 2px; }
 
+.framebox {
+  float: right;
+  width: 460px;
+  padding: 30px;
+  margin-left: 40px;
+  margin-top: 0; }
+  .framebox.framebox-margin-top {
+    margin-top: 200px; }
+
+.chart-legend {
+  padding-left: 60px; }
+
+.chart-container-right {
+  max-width: 500px;
+  float: right; }
+
+.tablebox {
+  display: block;
+  margin-top: 30px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 80px; }
+
 @media (max-width: 767px) {
+  .tablebox {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+    overflow-x: auto; }
+
+  .chart-container-right {
+    text-align: center;
+    float: inherit;
+    margin: 0 auto; }
+
+  .framebox {
+    float: inherit;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center; }
+    .framebox.framebox-margin-top {
+      margin-top: 20px; }
+
   .hero-header {
     padding: 3em 1em 1em 1em;
-    text-align: center; } }
+    text-align: center; }
+
+  .chart-legend {
+    padding-left: 0; } }
 /* iPad Portrait */
 @media (min-width: 768px) and (max-width: 991px) {
   .hero-header {
     padding: 3em 1em 1em 1em;
     text-align: center; } }
 /* iPad Landscape */
+/* chartist tooltips */
+.chartist-tooltip {
+  position: absolute;
+  display: none;
+  opacity: 0;
+  min-width: 5em;
+  padding: .5em;
+  background: #f9f6c7;
+  color: #453D3F;
+  font-family: Oxygen, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  text-align: center;
+  pointer-events: none;
+  z-index: 1;
+  -webkit-transition: opacity .2s linear;
+  -moz-transition: opacity .2s linear;
+  -o-transition: opacity .2s linear;
+  transition: opacity .2s linear; }
+
+.chartist-tooltip:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top-color: #f9f6c7; }
+
+.chartist-tooltip.tooltip-show {
+  display: inline-block;
+  opacity: 1; }
+
+.ct-area, .ct-line {
+  pointer-events: none; }
 
 /*# sourceMappingURL=style.css.map */

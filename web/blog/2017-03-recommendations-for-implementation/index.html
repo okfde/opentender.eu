@@ -16,6 +16,7 @@
 	<script src="../../assets/bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="../../assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="../../assets/bower_components/chartist/dist/chartist.min.js"></script>
+	<script src="../../assets/bower_components/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
 	<script src="../assets/js/jquery.easing.min.js"></script>
 	<script src="../assets/js/scrolling-nav.js"></script>
 </head>
@@ -166,7 +167,12 @@
 					},
 					axisX: {
 						onlyInteger: true
-					}
+					},
+					plugins: [
+						Chartist.plugins.tooltip({
+							appendToBody: true
+						})
+					]
 				});
 
 			</script>
@@ -270,7 +276,12 @@
 					},
 					axisX: {
 						onlyInteger: true
-					}
+					},
+					plugins: [
+						Chartist.plugins.tooltip({
+							appendToBody: true
+						})
+					]
 				});
 
 			</script>
@@ -364,268 +375,268 @@
 			</div>
 
 
-			<div class="centerbox">
+			<div class="tablebox">
 				<div class="legend">Figure 4. <b>The ideal list of variables and their publication location</b><br/>
 					A parsimonious list of key variables is able to support government accountability and transparency of bidding
 				</div>
 
 				<table class="table table-bordered table-responsive table-condensed">
-				<thead>
-				<tr>
-					<td rowspan="2">Variable group</td>
-					<td rowspan="2">Variable</td>
-					<td colspan="3">Included in the announcement</td>
-				</tr>
-				<tr>
-					<td width="60">contract im&shy;plementation</td>
-					<td width="60">contract award</td>
-					<td width="60">call for tender</td>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td rowspan="5">Buyer</td>
-					<td>Buyer’s name</td>
-					<td>●</td>
-					<td>●</td>
-					<td>●</td>
-				</tr>
-				<tr>
-					<td>Buyer’s department/office</td>
-					<td>●</td>
-					<td>●</td>
-					<td>●</td>
-				</tr>
-				<tr>
-					<td>Buyer’s unique ID</td>
-					<td>●</td>
-					<td>●</td>
-					<td>●</td>
-				</tr>
-				<tr>
-					<td>Buyer’s address</td>
-					<td>●</td>
-					<td>●</td>
-					<td>●</td>
-				</tr>
-				<tr>
-					<td>Buyer’s type</td>
-					<td>●</td>
-					<td>●</td>
-					<td>●</td>
-				</tr>
-				<tr>
-					<td rowspan="9">Bidder / bids</td>
-					<td>Bidder’s name</td>
-					<td>●</td>
-					<td>●</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Bidder’s unique ID/tax ID</td>
-					<td>●</td>
-					<td>●</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Bidder’s address</td>
-					<td>●</td>
-					<td>●</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Number of bids submitted</td>
-					<td></td>
-					<td>●</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Number of bids excluded</td>
-					<td></td>
-					<td>●</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Bid price (details on total and unit prices)</td>
-					<td>●</td>
-					<td>●</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Exact time of bid submission</td>
-					<td></td>
-					<td>●</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Bid type (winner/loser bid)</td>
-					<td></td>
-					<td>●</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Beneficial owners</td>
-					<td>●</td>
-					<td>●</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td rowspan="10">Tender / contract</td>
-					<td>Tender unique ID</td>
-					<td>●</td>
-					<td>●</td>
-					<td>●</td>
-				</tr>
-				<tr>
-					<td>Procedure type</td>
-					<td></td>
-					<td>●</td>
-					<td>●</td>
-				</tr>
-				<tr>
-					<td>Framework agreement (1st/2nd stage)</td>
-					<td></td>
-					<td>●</td>
-					<td>●</td>
-				</tr>
-				<tr>
-					<td>Award criteria</td>
-					<td></td>
-					<td>●</td>
-					<td>●</td>
-				</tr>
-				<tr>
-					<td>Threshold (below/above EU thresholds?)</td>
-					<td></td>
-					<td>●</td>
-					<td>●</td>
-				</tr>
-				<tr>
-					<td>Estimated price (details on total or unit prices)</td>
-					<td></td>
-					<td>●</td>
-					<td>●</td>
-				</tr>
-				<tr>
-					<td>Procurement type (service, supply, work)</td>
-					<td>●</td>
-					<td>●</td>
-					<td>●</td>
-				</tr>
-				<tr>
-					<td>CPV codes (% contract value per product)</td>
-					<td>●</td>
-					<td>●</td>
-					<td>●</td>
-				</tr>
-				<tr>
-					<td>NUTS code(s) of contract implementation</td>
-					<td>●</td>
-					<td>●</td>
-					<td>●</td>
-				</tr>
-				<tr>
-					<td>Status (cancelled, pending, etc.)</td>
-					<td>●</td>
-					<td>●</td>
-					<td>●</td>
-				</tr>
-				<tr>
-					<td rowspan="6">Dates</td>
-					<td>Call for tender publication date</td>
-					<td>●</td>
-					<td>●</td>
-					<td>●</td>
-				</tr>
-				<tr>
-					<td>Bid submission deadline</td>
-					<td></td>
-					<td></td>
-					<td>●</td>
-				</tr>
-				<tr>
-					<td>Contract start and end dates</td>
-					<td>●</td>
-					<td>●</td>
-					<td>●</td>
-				</tr>
-				<tr>
-					<td>Publication date of contract award</td>
-					<td></td>
-					<td>●</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Contract signature date</td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Publication date of contract completion</td>
-					<td>●</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td rowspan="2">Subcontracting</td>
-					<td>Subcontractor’s name and unique ID (tax ID)</td>
-					<td>●</td>
-					<td>●</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Subcontractor’s share</td>
-					<td>●</td>
-					<td>●</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td rowspan="2">Consortium</td>
-					<td>Consortium members’ name and unique ID (tax ID)</td>
-					<td>●</td>
-					<td>●</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Consortium members’ share</td>
-					<td>●</td>
-					<td>●</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td rowspan="5">Contract performance</td>
-					<td>Contract performance end date</td>
-					<td>●</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Was performance according to the contract</td>
-					<td>●</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Explanation in case of deferring from contract</td>
-					<td>●</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Information on contract modification</td>
-					<td>●</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Information on performance quality</td>
-					<td>●</td>
-					<td></td>
-					<td></td>
-				</tr>
-				</tbody>
-			</table>
+					<thead>
+					<tr>
+						<td rowspan="2">Variable group</td>
+						<td rowspan="2">Variable</td>
+						<td colspan="3">Included in the announcement</td>
+					</tr>
+					<tr>
+						<td width="60">contract im&shy;plementation</td>
+						<td width="60">contract award</td>
+						<td width="60">call for tender</td>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td rowspan="5">Buyer</td>
+						<td>Buyer’s name</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Buyer’s department/office</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Buyer’s unique ID</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Buyer’s address</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Buyer’s type</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td rowspan="9">Bidder / bids</td>
+						<td>Bidder’s name</td>
+						<td>●</td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Bidder’s unique ID/tax ID</td>
+						<td>●</td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Bidder’s address</td>
+						<td>●</td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Number of bids submitted</td>
+						<td></td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Number of bids excluded</td>
+						<td></td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Bid price (details on total and unit prices)</td>
+						<td>●</td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Exact time of bid submission</td>
+						<td></td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Bid type (winner/loser bid)</td>
+						<td></td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Beneficial owners</td>
+						<td>●</td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="10">Tender / contract</td>
+						<td>Tender unique ID</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Procedure type</td>
+						<td></td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Framework agreement (1st/2nd stage)</td>
+						<td></td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Award criteria</td>
+						<td></td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Threshold (below/above EU thresholds?)</td>
+						<td></td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Estimated price (details on total or unit prices)</td>
+						<td></td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Procurement type (service, supply, work)</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>CPV codes (% contract value per product)</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>NUTS code(s) of contract implementation</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Status (cancelled, pending, etc.)</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td rowspan="6">Dates</td>
+						<td>Call for tender publication date</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Bid submission deadline</td>
+						<td></td>
+						<td></td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Contract start and end dates</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Publication date of contract award</td>
+						<td></td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Contract signature date</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Publication date of contract completion</td>
+						<td>●</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2">Subcontracting</td>
+						<td>Subcontractor’s name and unique ID (tax ID)</td>
+						<td>●</td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Subcontractor’s share</td>
+						<td>●</td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2">Consortium</td>
+						<td>Consortium members’ name and unique ID (tax ID)</td>
+						<td>●</td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Consortium members’ share</td>
+						<td>●</td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="5">Contract performance</td>
+						<td>Contract performance end date</td>
+						<td>●</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Was performance according to the contract</td>
+						<td>●</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Explanation in case of deferring from contract</td>
+						<td>●</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Information on contract modification</td>
+						<td>●</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Information on performance quality</td>
+						<td>●</td>
+						<td></td>
+						<td></td>
+					</tr>
+					</tbody>
+				</table>
 			</div>
 
 
@@ -677,6 +688,94 @@
 				The most basic measure of data quality, the amount of missing information, shows how badly most EU countries fare, especially the better governed and richer member states like Sweden or Germany (Figure 5). Crucially,
 				investment in data infrastructure pays: new member states with more comprehensive public procurement data systems and more central control fare comparatively better, as is the case with Slovakia and Romania, for example.
 			</p>
+
+
+			<div class="chart-container-right">
+				<div class="chart ct-chart-bars-3"></div>
+				<div class="chart-legend legend">
+					Figure 5. <b>Extent of missing information</b>
+					Data quality is low throughout Europe with 15% of mandatory fields empty in the EU-wide TED data in 2009-2015
+				</div>
+			</div>
+
+			<script>
+
+
+				new Chartist.Bar('.ct-chart-bars-3', {
+					labels: [
+						'Sweden', 'Finland', 'Switzerland', 'Luxembourg', 'France', 'Portugal', 'Spain',
+						'Netherlands', 'United Kingdom', 'Denmark', 'Germany', 'Italy', 'EU AVG.', 'Belgium',
+						'Bulgaria', 'Greece', 'Austria', 'Cyprus', 'Latvia', 'Croatia', 'Slovenia',
+						'Estonia', 'Poland', 'Latvia', 'Czech Republic', 'Hungary', 'Romania',
+						'Iceland', 'Slovakia'
+					],
+					series: [
+						[
+							28.88715,
+							28.69162,
+							28.1283,
+							25.65757,
+							25.62893,
+							25.26982,
+							24.53326,
+							17.95992,
+							17.51309,
+							17.20487,
+							16.70124,
+							16.61096,
+							15.61198,
+							14.76434,
+							12.34032,
+							12.31615,
+							11.74305,
+							11.20111,
+							10.5869,
+							9.9654,
+							9.23008,
+							8.04087,
+							7.21796,
+							6.54164,
+							5.25668,
+							3.60993,
+							2.84837,
+							2.27012,
+							2.11485
+						]
+					]
+				}, {
+					height: 500,
+					seriesBarDistance: 10,
+					reverseData: true,
+					horizontalBars: true,
+					chartPadding: {
+						top: 0,
+						right: 40,
+						bottom: 0,
+						left: 0
+					},
+					axisY: {
+						offset: 120,
+						showGrid: false
+					},
+					axisX: {
+						onlyInteger: true,
+						labelInterpolationFnc: function (value) {
+							return value.toString() + '%';
+						}
+					},
+					plugins: [
+						Chartist.plugins.tooltip({
+							appendToBody: true,
+							transformTooltipTextFnc: function (value) {
+								return parseFloat(value).toFixed(2) + '%';
+							}
+						})
+					]
+				});
+
+
+			</script>
+
 			<p>Accordingly, we recommend that existing data reporting requirements are adequately enforced and data quality is increased to the legally mandated minimum throughout Europe. To ensure all required data fields are filled out
 				with truthful information, governments should introduce centralised control mechanisms and penalties for non-compliance. Punishment of non-compliance in extreme cases can include the freezing of the tender or interrupting
 				payments until records are corrected, practices employed in Slovakia, for example.
