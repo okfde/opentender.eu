@@ -60,7 +60,7 @@ a {
 
   &.btn-multiline {
     max-width: 450px;
-    font-size: 0.9em;
+    font-size: 0.8em;
   }
 }
 
@@ -394,6 +394,10 @@ a {
 
 .me-row {
   padding: 30px 0;
+}
+
+.center-block {
+  text-align: center;
 }
 
 .inline-footnote {
