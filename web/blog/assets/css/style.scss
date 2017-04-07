@@ -61,6 +61,11 @@ a {
   &.btn-multiline {
     max-width: 450px;
     font-size: 0.8em;
+
+    @media (max-width: 500px) {
+      max-width: 80%;
+      white-space: normal;
+    }
   }
 }
 
@@ -104,12 +109,8 @@ a {
 
 .infobox {
   background-color: #e6e7e8;
-  float: right;
-  width: 500px;
   padding: 30px;
-  padding-top: 100px;
-  margin-left: 40px;
-  margin-top: 200px;
+  margin-top: 40px;
   .infobox-head {
     text-transform: uppercase;
     font-weight: 700;
@@ -123,10 +124,23 @@ a {
     padding-left: 12px;
     padding-right: 50px;
   }
+
+  @media (min-width: 1000px) {
+    margin-top: 200px;
+    padding-top: 100px;
+    margin-left: 40px;
+    float: right;
+    width: 500px;
+  }
 }
 
 .table-condensed {
   font-size: 0.8em;
+}
+
+.table {
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 .centerbox {
@@ -139,6 +153,11 @@ a {
 
 .legend {
   font-size: 0.7em;
+
+  @media (max-width: 500px) {
+    margin-bottom: 60px;
+  }
+
 }
 
 .graphbox {
@@ -466,6 +485,7 @@ a {
     }
   }
   .section-head {
+    margin-top: 20px;
     h2 {
       font-size: 0.8em;
     }
@@ -526,7 +546,6 @@ a {
 }
 
 .framebox {
-  float: right;
   width: 460px;
   padding: 30px;
   margin-left: 40px;
@@ -534,6 +553,31 @@ a {
 
   &.framebox-margin-top {
     margin-top: 200px;
+
+  }
+  @media (max-width: 500px) {
+    &.framebox-margin-top {
+      margin-top: 20px;
+    }
+
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    display: block;
+
+    iframe {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 500px) {
+    float: right;
+  }
+
+  @media (max-width: 1000px) {
+    &.framebox-margin-top {
+      margin-top: 20px;
+    }
   }
 
 }

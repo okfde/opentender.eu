@@ -41,6 +41,10 @@ a {
   .btn.btn-multiline {
     max-width: 450px;
     font-size: 0.8em; }
+    @media (max-width: 500px) {
+      .btn.btn-multiline {
+        max-width: 80%;
+        white-space: normal; } }
 
 .section-head {
   background-color: #deddde;
@@ -71,12 +75,8 @@ a {
 
 .infobox {
   background-color: #e6e7e8;
-  float: right;
-  width: 500px;
   padding: 30px;
-  padding-top: 100px;
-  margin-left: 40px;
-  margin-top: 200px; }
+  margin-top: 40px; }
   .infobox .infobox-head {
     text-transform: uppercase;
     font-weight: 700;
@@ -89,9 +89,20 @@ a {
     padding-top: 10px;
     padding-left: 12px;
     padding-right: 50px; }
+  @media (min-width: 1000px) {
+    .infobox {
+      margin-top: 200px;
+      padding-top: 100px;
+      margin-left: 40px;
+      float: right;
+      width: 500px; } }
 
 .table-condensed {
   font-size: 0.8em; }
+
+.table {
+  max-width: 100%;
+  overflow-x: auto; }
 
 .centerbox {
   display: block;
@@ -102,6 +113,9 @@ a {
 
 .legend {
   font-size: 0.7em; }
+  @media (max-width: 500px) {
+    .legend {
+      margin-bottom: 60px; } }
 
 .graphbox {
   float: right;
@@ -335,8 +349,10 @@ a {
   .section-affix h3 {
     font-size: 0.8em; }
 
-  .section-head h2 {
-    font-size: 0.8em; }
+  .section-head {
+    margin-top: 20px; }
+    .section-head h2 {
+      font-size: 0.8em; }
 
   .section h3 {
     margin-top: 20px; } }
@@ -374,13 +390,28 @@ a {
   padding-bottom: 2px; }
 
 .framebox {
-  float: right;
   width: 460px;
   padding: 30px;
   margin-left: 40px;
   margin-top: 0; }
   .framebox.framebox-margin-top {
     margin-top: 200px; }
+  @media (max-width: 500px) {
+    .framebox {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      display: block; }
+      .framebox.framebox-margin-top {
+        margin-top: 20px; }
+      .framebox iframe {
+        width: 100%; } }
+  @media (min-width: 500px) {
+    .framebox {
+      float: right; } }
+  @media (max-width: 1000px) {
+    .framebox.framebox-margin-top {
+      margin-top: 20px; } }
 
 .chart-legend {
   padding-left: 60px; }
