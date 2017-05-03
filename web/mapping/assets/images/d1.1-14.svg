@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="yes"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" min-width="320" height="100%" viewBox="0 -140 884 800" version="1.1">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" min-width="320" viewBox="0 -140 884 800" version="1.1" preserveAspectRatio="xMidYMid meet">
     <defs><style type="text/css"><![CDATA[ svg {background-color:#fff;stroke:#fff;fill:#fff;} .country {stroke:#222;stroke-width: 0.5;fill:#b8b8b8;} #bg {fill:#b6e0d2;} #cz {fill:#b6e0d2;} #ee {fill:#b6e0d2;} #ge {fill:#b6e0d2;} #ie {fill:#b6e0d2;} #it {fill:#b6e0d2;} #lv {fill:#b6e0d2;} #lt {fill:#b6e0d2;} #pt {fill:#b6e0d2;} #sk {fill:#b6e0d2;} #hr {fill:#88cbac;} #fi {fill:#88cbac;} #is {fill:#88cbac;} #nl {fill:#88cbac;} #no {fill:#88cbac;} #rs {fill:#88cbac;} #si {fill:#88cbac;} #es {fill:#5ab685;} #pl {fill:#2ca25f;} #am {fill:#2ca25f;} #at {fill:#2ca25f;} #be {fill:#2ca25f;} #cy {fill:#2ca25f;} #dk {fill:#2ca25f;} #ec {fill:#2ca25f;} #fr {fill:#2ca25f;} #de {fill:#2ca25f;} #gr {fill:#2ca25f;} #hu {fill:#2ca25f;} #lu {fill:#2ca25f;} #mt {fill:#2ca25f;} #ro {fill:#2ca25f;} #ch {fill:#2ca25f;} #gb {fill:#2ca25f;} ]]></style></defs>
     <g id="ne_50m_admin_0_countries">
         <g id="al" class="country">
