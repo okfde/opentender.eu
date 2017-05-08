@@ -1,2 +1,2 @@
 # opentender.eu
-procurement portals for the DIGIWHIST project
+publications and static blog for the DIGIWHIST project on opentender.eu
