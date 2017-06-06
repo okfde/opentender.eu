@@ -46,6 +46,9 @@ a {
         max-width: 80%;
         white-space: normal; } }
 
+@media (max-width: 1000px) {
+  p.more {
+    margin: 0 auto; } }
 .section-head {
   background-color: #deddde;
   padding-top: 30px;
@@ -355,7 +358,10 @@ a {
       font-size: 0.8em; }
 
   .section h3 {
-    margin-top: 20px; } }
+    margin-top: 20px; }
+
+  .page-scroll {
+    font-size: 0.8em; } }
 .chart-container {
   margin-top: 40px;
   margin-bottom: 40px; }

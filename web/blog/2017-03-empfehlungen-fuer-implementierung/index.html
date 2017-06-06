@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Digiwhist: Empfehlungen für die Implementierung Offener und Öffentlicher Vergabedaten">
+	<meta name="author" content="@digiwhist">
+	<title>Digiwhist: Empfehlungen für die Implementierung Offener und Öffentlicher Vergabedaten</title>
+
+	<link href="../../assets/bower_components/lato-font/css/lato-font.min.css" rel="stylesheet">
+	<link href="../../assets/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../../assets/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
+	<link href="./../assets/css/style.css" rel="stylesheet">
+
+	<script src="../../assets/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../../assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="../../assets/bower_components/chartist/dist/chartist.min.js"></script>
+	<script src="../../assets/bower_components/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+	<script src="../assets/js/jquery.easing.min.js"></script>
+	<script src="../assets/js/scrolling-nav.js"></script>
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navigation">
+<nav class="side-menu navigation">
+	<ul class="nav">
+		<li class="hidden">
+			<a class="page-scroll" href="#page-top">Start</a>
+		</li>
+		<li class="active">
+			<a href="#home" class="page-scroll">
+				<span class="menu-title">Start</span>
+				<span class="dot"></span>
+			</a>
+		</li>
+		<li>
+			<a href="#format" class="page-scroll">
+				<span class="menu-title">I. Publikationsformat und Veröffentlichungsort</span>
+				<span class="dot"></span>
+			</a>
+		</li>
+		<li>
+			<a href="#regulatoryscope" class="page-scroll">
+				<span class="menu-title">II. Regelungsbereich und Datenabdeckung</span>
+				<span class="dot"></span>
+			</a>
+		</li>
+		<li>
+			<a href="#datadepth" class="page-scroll">
+				<span class="menu-title">III. Datentiefe</span>
+				<span class="dot"></span>
+			</a>
+		</li>
+		<li>
+			<a href="#dataquality" class="page-scroll">
+				<span class="menu-title">IV. Datenqualität</span>
+				<span class="dot"></span>
+			</a>
+		</li>
+		<li>
+			<a href="#datause" class="page-scroll">
+				<span class="menu-title">V. Datennutzung</span>
+				<span class="dot"></span>
+			</a>
+		</li>
+	</ul>
+</nav>
+
+<div class="container-fluid section-guide" id="home">
+	<div class="row hero-header">
+		<div class="col-md-7">
+			<a href="http://digiwhist.eu"><img src="../../assets/img/digiwhist-logo.png" class="logo"></a>
+			<h1>Empfehlungen für die Implementierung Offener und Öffentlicher Vergabedaten</h1>
+			<h2>Ein Handbuch für Initiatoren</h2>
+			<h4>Mara Mendes</h4>
+			<h5>Open Knowledge Foundation Deutschland</h5>
+			<h4>Mihály Fazekas</h4>
+			<h5>University of Cambridge</h5>
+			<div class="buttons">
+				<a href="../assets/downloads/digiwhist_implentierungshandbuch.pdf" class="btn btn-lg btn-red">PDF-Download <span class="glyphicon glyphicon-download"></span></a>
+				<a href="#format" class="btn btn-lg btn-red page-scroll">Jetzt lesen <span class="glyphicon glyphicon-arrow-down"></span></a>
+			</div>
+		</div>
+		<div class="col-md-5 hidden-xs">
+		</div>
+	</div>
+</div>
+
+<div class="section-affix">
+	<h3>Digiwhist: Empfehlungen für die Implementierung Offener und Öffentlicher Vergabedaten</h3>
+	<nav class="affix-menu navigation">
+		<ul class="nav">
+			<li><a href="#format" class="page-scroll">I. Publikationsformat und Veröffentlichungsort</a></li>
+			<li><a href="#regulatoryscope" class="page-scroll">II. Regelungsbereich und Datenabdeckung</a></li>
+			<li><a href="#datadepth" class="page-scroll">III. Datentiefe</a></li>
+			<li><a href="#dataquality" class="page-scroll">IV. Datenqualität</a></li>
+			<li><a href="#datause" class="page-scroll">V. Datennutzung</a></li>
+		</ul>
+	</nav>
+</div>
+
+<div class="section-head" id="format">
+	<h2>I. Publikationsformat und Veröffentlichungsort</h2>
+</div>
+<div class="section section-recommenations container">
+	<div class="row me-row">
+		<div class="col-md-12">
+			<h3 id="guide1">1. Die Regierungen sollen ein umfassendes zentrales öffentliches Beschaffungsportal einrichten</h3>
+			<p>
+
+				Derzeit haben 23 von 34 DIGIWHIST Ländern bereits ein zentrales, nationales, und öffentliches Beschaffungsportal, auf dem alle geregelten Ausschreibungen und Verträge veröffentlicht werden, wobei Informationsgehalt,
+				Benutzerfreundlichkeit, und Zuverlässigkeit stark variieren. In einigen Fällen veröffentlichen diese nationale Portale nur Verträge unterhalb des EU-Schwellenwerts, und verweisen bei Verträgen oberhalb des
+				Schwellenwerts auf das EU-weite <a href="http://ted.europa.eu/TED/misc/chooseLanguage.do">Tenders Electronic Daily (TED)</a> Portal.
+				Auf EU-Ebene dient TED als zentrale Plattform, um Ausschreibungen von EU-Institutionen (sowie der nationalen Regierungen), deren Wert den EU-Schwellenwerte überschreitet, zu veröffentlichen.
+				<span class="inline-footnote">Cingolani, L., Fazekas, M., Kukutschka, R. and Tóth, B. (2016). Towards a comprehensive mapping of information on public procurement tendering and its actors across Europe.</span>
+
+				Eine Analyse von DIGIWHIST hat ergeben, dass in acht Ländern <span class="inline-footnote">Das sind Belgien, Frankreich, Deutschland, Island, Italien, Malta, Spanien, unds UK.</span> mehrere nationale und subnationale Portale existieren,
+				deren Inhalte oftmals überlappen.
+				Dies erzeugt Verwirrung und unnötige Komplexität in den öffentlichen Beschaffungsmärkten. Die Tatsache dass mehrere Portale existieren ist oft in der föderalen Verwaltungsstruktur geschuldet,
+				und schafft in der Konsequenz Markteintrittsbarrieren, die zu wirtschaftlicher Ineffizienz und Korruptionsrisiken führen. Leider ist in drei Ländern (Österreich, Luxemburg und Schweden) gar kein öffentliches Portal vorhanden,
+				was die öffentlichen Beschaffungsmärkte besonders intransparenz macht.
+				<span class="inline-footnote">In solchen Ländern treten typischerweise verschiedene private Unternehmen auf, um die Informationslücken zu füllen, tun dies jedoch im Gegenzug für die Erhebung einer Zugangsgebühr, was die Regierungen effektiv daran hindert, die Datenqualität und den Inhalt zu kontrollieren.</span>
+			</p>
+			<p>
+				Von der gebührenfreien und umfassenden Bereitstellung von Daten zu öffentlicher Beschaffung in einem einfach zu bedienenden Format mit Zugang für alle beteiligten Akteuere wird erwartet, dass Markttransparenz erhöht,
+				Transaktionskosten gesenkt, und die Rechenschaftspflicht der Regierung gestärkt wird.
+				<span class="inline-footnote">Dies wurde auch von der G20 empfohlen. Weitere Inforamtionen finden Sie unter: G20 Principles for promoting integrity in public procurement. Verfügbar hier: <a href="http://g20.org.tr/wp-content/uploads/2015/11/G20-PRINCIPLES-FOR-PROMOTING-INTEGRITY-IN-PUBLIC-PROCUREMENT.pdf">G20 Principles for promoting integrity in public procurement</a>.</span>
+				Daher sollte eine gut funktionierende zentrale öffentliche Beschaffungsplattform zur Erreichung des Preis-Leistungsverhältnisses
+				in der öffentlichen Beschaffung beitragen sowie Integrität im gesamten öffentlichen Sektor erhöhen. Das DIGIWHIST Portal <a class="digiwhist" href="https://opentender.eu">opentender.eu</a> hat alle oben genannten Funktionalitäten und wird Anfang 2018 öffentlich zugänglich sein,
+				um Lücken zu schließen, wo es die Quelldatenqualität ermöglicht.
+			</p>
+
+			<h3 id="guide2">2. Die Regierungen sollten sich dazu verpflichten, Beschaffungsdaten standardmäßig in einem offenen und einfach zu verstehenden Format bereitzustellen</h3>
+			<p>
+				Derzeit variiert das Format und die Zugänglichkeit von öffentlichen Beschaffungsdaten innerhalb Europas stark. <span class="inline-footnote">Cingolani, L., Fazekas, M., Kukutschka, R. and Tóth, B. (2016). Towards a comprehensive mapping of information on public procurement tendering and its actors across Europe.</span>
+				Bezüglich der Diversität der Formulare die zur Veröffentlichung, Modifikation oder Stornierung von Ausschreibungen
+				sowie für Vertragsabschlüsse verwendet werden, gibt es bei fünf der untersuchten Länder7 keinen öffentlichen Standard, und bei den restlichen Ländern durchschnittlich mehr als acht benutzte Vorlagen.
+				Keine öffentlich definierten Standard zu haben entledigt Regierungen im Wesentlichen von der Kapazität, Dateninhalt und -Qualität zu beeinflussen.
+				Gut ist, dass die Komplexität der Berichtsstandards bei den 13 untersuchten Ländern mit einem definierten Standard nahe dem geringstmöglichen Wert liegt, da sie drei oder weniger
+				Vorlagen für die drei Arten von Ausschreibungen benutzen (Abbildung 1). Eine solch geringe Anzahl an Berichtsformaten zu haben, macht das Verständnis und die Verarbeitung
+				des öffentlichen Beschaffungswesens einfacher und stellt somit das optimale Szenario dar.
+				Problematischerweise verwenden mehrere Länder sowie das EU-weite TED-Portal eine große Anzahl von verschiedenen Vorlagen - mehr als 15 oder sogar 20 - was zu einer unnötigen
+				Schicht von Komplexität für das Verständnis und die Wiederverwertung der Daten führt.</p>
+
+			<div class="chart-container-right">
+				<div class="chart ct-chart-bars-1"></div>
+				<div class="chart-legend legend">
+					Abbildung 1. <b>Komplexität der Reporting-Standard-Formate</b>
+					Die Anzahl der unterschiedlichen nationalen Formate die für Bekanntmachung von Ausschreibungen, Vergaben und Vertragsänderungen auf dem wichtigsten nationalen Portal ist nur in etwa bei der Hälfte der europäischen Länder optimal.
+				</div>
+			</div>
+
+			<script>
+
+				new Chartist.Bar('.ct-chart-bars-1', {
+					labels: ['Ungarn', 'Bulgarien', 'EC (TED)', 'Litauen', 'Slowakei',
+						'Serbien', 'Estland',
+						'Österreich', 'Tschechien', 'Armenien', 'Polen', 'Rumänien',
+						'Slowenien', 'Spanien', 'Frankreich', 'Lettland',
+						'Schweiz', 'Belgien', 'Luxemburg',
+						'Niederlande', 'Portugal', 'Zypern', 'Finnland',
+						'Deutschland', 'Irland', 'Norwegen',
+						'Kroatien', 'Georgien', 'Italien', 'Vereinigtes Königreich'
+					],
+					series: [
+						[37, 22, 22, 20, 16, 15, 14, 12, 12, 10, 9, 7, 7, 7, 6, 6, 4, 3, 3, 3, 3, 2, 2, 2, 2, 2, 1, 1, 1, 1]
+					]
+				}, {
+					height: 500,
+					seriesBarDistance: 20,
+					reverseData: true,
+					horizontalBars: true,
+					axisY: {
+						offset: 140,
+						showGrid: false
+					},
+					axisX: {
+						onlyInteger: true
+					},
+					plugins: [
+						Chartist.plugins.tooltip({
+							appendToBody: true
+						})
+					]
+				});
+
+			</script>
+
+			<p>
+				In Bezug auf die Zugänglichkeit von öffentlichen Beschaffungsdaten, die sich in ihrer maschinenlesbaren Verfügbarkeit manifestiert,
+				ist die aktuelle Situation in Europa problematisch und von grundlegenden Hindernissen für die Wiederverwendung von Daten gezeichnet.
+
+				In nur drei Ländern (Belgien, Polen, und Vereinigte Königreich) und dem EU-weiten TED-Portal sind öffentliche Beschaffungsdaten vollständig maschinenlesbar verfügbar, und auch in diesen Fällen ist das Herunterladen von Daten dadurch erschwert,
+				dass unnötige Hürden im Widerspruch zu grundlegenden Prinzipien offener Daten gesetzt sind (z.B. können polnische nationale öffentliche Beschaffungsdaten im XML-Format heruntergeladen werden,
+				müssen dann aber in Form von RAR-Archiven extrahiert werden, die nur schwer automatisiert abgerufen werden können).
+				In 26 Ländern sind Daten nur teilweise maschinenlesbar, was bedeutet, dass es zwar möglich ist, die Informationen automatisch zu sammeln, diese aber in den meisten Fällen nicht konsequent
+				und eindeutig strukturiert sind. Dies macht das Erstellen von Datenbanken zu einer teuren, langwierigen, und fehleranfälligen Aufgabe.
+				<span class="inline-footnote">Czibik, Á., Tóth, B., &amp; Fazekas, M. (2015). <a href="http://www.govtransparency.eu/wp-content/uploads/2015/12/GTI_publicprocurement_techreport_1512221.pdf">How to Construct a Public Procurement Database from Administrative Records? With examples from the Hungarian public procurement system of 2009-2012</a>. Government Transparency Institute: Budapest.</span>
+				Des Weiteren sind die Daten in fünf Ländern (Armenien, Finnland, Island, Malta, Schweden) nicht einmal teilweise maschinenlesbar, was bedeutet, dass im Großen und Ganzen nur eine manuelle Datenerfassung eingesetzt werden kann,
+				um für eine Datenbank aufzubauen. Daten sind in diesen Fällen bspw. in gescannten PDF’s gespeichert, die nur schwer von Algorithmen analysiert werden können.
+			</p>
+			<p>
+				Beschaffungsdaten in einem zeitgemäßen, einfachen, und leicht zu verstehenden Format sowie die zusätzliche Veröffentlichung als maschinenlesbare Daten sind essentiell für eine Senkung der Barrieren
+				für die (Wieder-)Verwendung von allen beteiligten Akteuren. Solche elementaren Normen werden von EU-Beitrittsländern erwartet
+				obwohl die meisten Mitgliedstaaten sie nicht erfüllen. <span class="inline-footnote">OECD/Sigma. (2014). The Principles of Public Administration. Paris: OECD/Sigma.</span>
+				Wie von internationalen Organisationen der Zivilgesellschaft wie der Open Knowledge Foundation, der Sunlight Foundation, sowie der Open Contracting Partnership empfohlen,
+				müssen die Regierungen die Bereitstellung in maschinenlesbaren Dateiformaten wie <a href="http://opendatahandbook.org/glossary/en/terms/machine-readable/">CSV, JSON, und XML</a> garantieren um Benutzerfreundlichkeit zu gewährleisten.
+				Benutzer sollten auch in der Lage sein, die Gesamtheit der Daten entweder als CSV-Datei oder über eine Programmierschnittstelle (API) abzurufen.
+				<span class="inline-footnote">Mehr Information im <a href="http://opendatahandbook.org">Open Data Handbook</a> der Open Knowledge Foundation. Und den <a href="https://sunlightfoundation.com/procurement/opendataguidelines/">Open Data Guidelines</a> der Sunlight Foundation.</span>
+				Die Anzahl der Datenpublikationsformen sollten auf ein absolutes Mindestmaß reduziert werden, um die Einbeziehung von Stakeholdern durch gesenkte Komplexität zu erleichtern.
+            </p>
+			<p>
+				Dies bedeutet, dass die Vor- und Nachteile von unterschiedlichen Formaten, die aufgrund unterschiedlicher regulatorischer Anforderungen und Legacy-Anforderungen
+				(z.B. aufgrund von spezifischen Regeln der öffentlichen Versorgungsbranche) eingesetzt werden, in Bezug auf deren hohe Kosten für Nicht-Experten, die die Daten verstehen und verwenden wollen,
+				abgewägt werden müssen. Entscheidend ist: die Vergabe öffentlicher Aufträge ist eine essentiell technische Domäne in ganz Europa und erweist sich für viele kleine und mittlere Unternehmen,
+				Journalisten, Akteure der Zivilgesellschaft sowie Regierungsbehörden als große Herausforderung. Um sicherzustellen, dass Datenformate und deren Zugänglichkeit den Bedürfnissen der Nutzer entsprechen,
+				sollten die Regierungen Überwachungsmechanismen und Lernprozesse etablieren an denen Datennutzer und -produzenten gleichermaßen beteiligt sind. Dies entspricht auch den in der Open Government Partnership
+				(OGP) dargelegten Verpflichtungen und sollte von allen OGP Mitgliedern umgesetzt werden.
+				<span class="inline-footnote">
+					Mehr Information <a href="http://www.opengovguide.com/commitments/publish-key-documents-and-data/">Open Government Guide. Public Procurement. Disclose key documents and data.</a>
+				    Diese Grundsätze werden auch allgemeiner in der <a href="http://opendatacharter.net/principles/">International Open Data Charter</a> dargelegt.
+				</span>
+			</p>
+		</div>
+	</div>
+</div>
+
+<div class="section-head" id="regulatoryscope">
+	<h2>II. Regelungsbereich und Datenabdeckung</h2>
+</div>
+<div class="section section-recommenations container">
+	<div class="row me-row">
+		<div class="col-md-12">
+			<h3 id="guide3">3. Die Regierungen sollten niedrige Meldeschwellen unter einem einheitlichen Rechtsrahmen für alle Bereiche der öffentlichen Vergabe und für alle Körperschaften des öffentlichen Rechts implementieren</h3>
+			<p>Transparenzanforderungen werden primär durch Schwellenwerte bestimmt, die die Anwendung bestimmter Verfahrens- und Meldevorschriften auslösen wenn Auftragswerte über ihnen liegen. Unterhalb dieser Schwellenwerte, die in den Vergaberichtlinien der EU festgelegt sind, können die nationalen Regierungen ihre eigenen Regelungen mit entsprechenden Auftragswerten verfassen, weswegen Verträge unterhalb der EU-Schwellenwerte weitgehend unreguliert sind (direkte Vergabe ohne Wettbewerb kann so bspw. erlaubt sein). Eine kleine Gruppe von europäischen Ländern hat Schwellenwerte so niedrig angesetzt, dass der größte Teil ihrer öffentlichen Beschaffungsausgaben transparent ist. Portugal geht dabei soweit, die Gesamtheit der öffentlichen Verträge auf seinem nationalen Portal zu veröffentlichen. Am anderen Ende des Spektrums gibt es vier Länder - Österreich, Deutschland, Luxemburg und die Niederlande - die unterhalb der EU-Schwellenwerte keine verbindliche nationale Meldeschwelle haben, was bedeutet, dass sie im Wesentlichen nur das Nötigste in Bezug auf die Regulierung öffentlicher Beschaffungen tun. Dies ist höchst problematisch, nicht nur in Bezug auf die Rechenschaftspflicht der Regierung, sondern auch auf deren wirtschaftliche Effizienz. Wichtige Korruptionsskandale und Fehlinvestitionen in Ländern wie
+				Deutschland (Ein Beispiel ist der berüchtigte Flughafen Berlin-Brandenburg) oder den Niederlanden
+				<span class="inline-footnote">Van Den Heuvel, G. (2006). The Parliamentary Enquiry on Fraud in the Dutch Construction Industry Collusion as Concept Between Corruption and State-Corporate Crime. Crime, Law and Social Change, 44(2), 133–151.</span>
+				zeigen, wie hoch die Risiken einer mangelhaften Transparenzregelung in einem Bereich sind, der bis zu einem Drittel der Staatsausgaben verschlingt.
+			</p>
+
+			<div class="chart-container">
+				<div class="chart ct-chart-bars-2"></div>
+				<div class="chart-legend legend">
+					Abbildung 2. <b>Umfang der öffentlichen Beschaffungsdatenbanken</b>
+					Breite Variation in ganz Europa in Bezug auf die Mindestvertragswertschwelle für die Veröffentlichung von Liefer- und Dienstleistungsverträgen (2015, EUR)
+				</div>
+			</div>
+
+			<script>
+
+				new Chartist.Bar('.ct-chart-bars-2', {
+					labels: ['Portugal', 'Zypern', 'Armenien', 'Georgien', 'Malta', 'Serbien',
+						'Lettland', 'Belgien', 'Kroatien', 'Estland', 'Bulgarien', 'Vereinigtes Königreich',
+						'Frankreich', 'Spanien', 'Griechenland', 'Italien', 'Slowakei', 'Slowenien', 'Irland',
+						'Ungarn', 'Finnland', 'Polen', 'Rumänien', 'Schweden', 'Norwegen',
+						'Litauen', 'Dänemark', 'Tschechien', 'Island',
+						'Schweiz', 'Luxemburg', 'Österreich', 'Europäische Kommission',
+						'Deutschland', 'Niederlande'
+					],
+					series: [
+						[
+							0, 1708, 1884, 1991, 2500, 3313, 4000, 8500, 9194, 10000, 10226, 13777, 15000, 18000, 20000, 20000, 20000, 20000
+							, 25000, 25806, 30000, 30000, 30000, 53961, 55868, 58000, 67036, 73316, 78606, 93642, 130000, 134000, 134000, 134000, 134000
+						]
+					]
+				}, {
+					height: 500,
+					high: 134000,
+					seriesBarDistance: 10,
+					reverseData: true,
+					horizontalBars: true,
+					chartPadding: {
+						top: 0,
+						right: 40,
+						bottom: 0,
+						left: 0
+					},
+					axisY: {
+						offset: 160,
+						showGrid: false
+					},
+					axisX: {
+						onlyInteger: true
+					},
+					plugins: [
+						Chartist.plugins.tooltip({
+							appendToBody: true
+						})
+					]
+				});
+
+			</script>
+
+			<p>
+				Einige öffentliche Einrichtungen wie Stadtwerke, und einige Märkte wie der der Verteidigung können aus Gründen des Verwaltungsaufwandes oder nationaler Sicherheitsbedenken von dem oben genannten Regelwerk befreit werden;
+				jedoch sind Ausnahmen dieser Art oft Gegenstand korrupten Missbrauchs.
+				<span class="inline-footnode"> Siehe auch: OECD. (2007). <a href="http://www.oecd.org/development/effectiveness/38588964.pdf">Integrity in Public Procurement. Good Practice from A to Z.</a> Paris: OECD.</span>
+				Sie gibt es vielfach in ganz Europa,
+				wobei keine gründliche Bewertung des Grades des Missbrauchs und der Auswirkungen auf die öffentliche Integrität existiert.
+				<span class="inline-footnote">Vollständige Angaben zu gesetzlich vorgeschriebenen Ausnahmen finden Sie hier: <a href="http://europam.eu">Europam</a></span>
+			</p>
+			<p>Regierungen sollten niedrige monetäre Veröffentlichungsschwellen und einheitliche Vergabevorschriften implementieren die für alle öffentlichen Einrichtungen und Ausgabenbereiche gelten. Die Veröffentlichungsschwelle sollte idealerweise nahe an 0 € liegen, um so alle bzw. den Großteil öffentlicher Ausgaben durch die Vergabe öffentlicher Aufträge systematisch transparent zu veröffentlichen. Mit der weit verbreiteten Nutzung von elektronischen Vergabesystemen (e-Vergabesytemen) und der elektronischen Verwaltung von öffentlichen (staatlichen) Käufen sind die Kosten der resultierenden Transparenz mehr oder weniger gleich wie die (ziemlich) minimalen Kosten der Adaption von IT-Systemen in der Regierung (die meisten, wenn nicht sogar alle Informationen, die in öffentlichen Ausschreibungen veröffentlicht werden, müssen ohnehin als Teil von standardmäßiger Dokumentation aufgezeichnet werden!). Was die Anwendung von prozessualen Regeln angeht, wie im Fall offen zugänglicher Gebote, muss der Anspruch der Öffentlichkeit an freien Wettbewerb vorsichtig mit den zu erwartenden Vorteilen konkurrierenden Angeboten und die aus der Verwaltung offener und hoch-regulierter Ausschreibung resultierende Erhöhung des Verwaltungsaufwands balanciert werden. Für Kleinbeträge sollte ein vereinfachtes prozessuales System angewendet werden, während die vollen Verfahrens- und Transparenzvorschriften für höherwertige Verträge von etwa 30-40.000€ gelten würden.</p>
+			<p>Die Anzahl der öffentlichen Institutionen (wie Stadtwerke oder lokale Regierungen) und Sektoren wie Verteidigung und nationale Sicherheit die von diesem Regelwerk ausgenommen werden, sollte minimal gehalten werden, um die Vorteile der Markttransparenz voll auszuschöpfen und das Ausnutzen von Ausnahmeregelungen zu minimieren.</p>
+		</div>
+	</div>
+</div>
+
+<div class="section-head" id="datadepth">
+	<h2>III. Datentiefe</h2>
+</div>
+<div class="section section-recommenations container">
+	<div class="row me-row">
+		<div class="col-md-12">
+
+			<h3 id="guide4">4. Die Regierungen sollten die Tiefe der veröffentlichten Beschaffungsdaten erhöhen, und dabei insbesondere Verlagsimplementierungsdaten, zuverlässige Daten über korrigierte und erfolglose Ausschreibungen, sowie organisatorische IDs standardmäßig veröffentlichen.</h3>
+
+			<p>Beschaffungsprozesse erstrecken sich typischerweise über einen langen Zeitraum und umfassen verschiedene Stufen, wie den Aufruf zur Interessenbekundung oder Vorankündigung; eine formelle Ausschreibung; Ankündigungen der/des erfolgreichen Bieter; Vertragsabwicklung; und Ex-post-Bewertung der Leistung. Jede dieser Stufen kann auch modifiziert, storniert, oder Gegenstand juristischer Anfechtungen sein. Da das öffentliche Beschaffungswesen typischerweise ein stark strukturiertes und komplexes Verfahren ist, gibt es viele Variablen, die in jeder Phase gemeldet werden sollten, um interessierte Bieter und die Zivilgesellschaft ausreichend zu informieren.</p>
+
+			<div class="framebox">
+				<iframe src="../../mapping/iframe.html#?nr=5&amp;sub=5" frameborder="0" width="400px" height="410px"></iframe>
+				<div class="legend">Abbildung 3. <b>Abdeckung des vollen Ausschreibungszyklus</b><br/>Nur wenige Länder veröffentlichen Informationen über die Vertragsumsetzung (vollständige Deckung war nur bis 2012 im Falle von Ungarn verfügbar).</div>
+			</div>
+
+			<p>
+				Erstens ist es problematisch, dass fast alle europäischen Vergabesysteme keine Informationen über die Vertragsabwicklung zur Verfügung stellen. Regulatorische Rahmenbedingungen sowie Publikationssysteme sind eingerichtet, als ob die öffentliche Auftragsvergabe bei der Vergabe enden würde. Natürlich werden Informationen zur Vertragsabwicklung in anderen Verwaltungssystemen aufgezeichnet, und andere Regeln gelten, wie zum Beispiel die der öffentlichen Finanzverwaltung; jedoch erschweren solche getrennten Systeme die Überwachung und das erforderliche Verständnis für die Performance und Korruptionsrisiken der Vergabe öffentlicher Aufträge extrem. Nur acht von 35 Ländern veröffentlichen Informationen zu Leistungsindikatoren in ihren öffentlichen Beschaffungssystemen, und Ungarn hat damit im Jahr 2011 aufgehört (Abbildung 3).
+				<span class="inline-footnote">Cingolani, L., Fazekas, M., Kukutschka, R. and Tóth, B. (2016). Towards a comprehensive mapping of information on public procurement tendering and its actors across Europe.</span>
+			</p>
+
+			<p>
+				Zweitens, aufgrund der Komplexität, dem hohen Maß an Regulierung, und der inhärenten Unsicherheit beim Kauf komplexer Produkte und Dienstleistungen, sind korrigierte und erfolglose Angebote auch in Ländern mit hohen Verwaltungskapazitäten kein seltenes Phänomen. So liegt in Schweden oder Ungarn die Rate der erfolglose Ausschreibungen zwischen 5-13%, obwohl zuverlässige Daten zur Verfügung stehen. Diese Zahlen unterstreichen die Bedeutung einer besseren Überwachung und einem besseren Verständnis von erfolglose Angeboten, da diese sowohl für Käufer als auch für Bieter erhebliche Kosten mit sich ziehen können. Dennoch werden in vielen öffentlichen Vergabeportalen, Änderungen und erfolglose Angebote nicht ausreichend aufgenommen - zumindest besteht der Verdacht, dass Daten in dieser Hinsicht unzuverlässig sind. Es gibt keinen Datenpunkt, der Fehler in Ausschreibungen anzeigt, so dass erfolglose Angebote aussehen wie Angebote mit unvollständigen Informationen - zwei Szenarien mit unterschiedlichen Folgen. Außerdem werden administrative Korrekturen und Änderungen von bereits veröffentlichten Ankündigungen der Regel aufgezeichnet und in unstrukturierter Textfeldern veröffentlicht, so dass es fast unmöglich ist, die korrigierten Informationen automatisch zu identifizieren und an die ursprüngliche Ankündigung anzuheften.
+				<span class="inline-footnote">Entscheidend ist, dass die neuen TED-Standard-Formulare im Rahmen der öffentlichen Konsultation bis Januar 2017 darauf abzielen, diese Frage zu lösen, indem sie verlangen, dass die korrigierten Informationen in demselben Format neu veröffentlicht werden, wie die ursprünglichen falschen Informationen, um die Korrekturen nachvollziehbar zu machen.</span>
+			</p>
+
+			<div class="framebox">
+				<iframe src="../../mapping/iframe.html#?nr=14" frameborder="0" width="400px" height="410px"></iframe>
+				<div class="legend">Abbildung 4. <b>Eindeutige Bezeichner (IDs) für Organisationen</b><br/>
+					Die meisten europäischen Länder scheitern, eindeutige Bezeichner (IDs) für Organisationen zu melden, was die sichere und eindeutige Identifizierung von Käufern und Bietern problematisch macht.
+				</div>
+			</div>
+
+			<p>Drittens: Selbst nachdem sichergestellt wurde, dass die Veröffentlichungspflichten sich über den gesamten Vergabezyklus erstrecken und Informationsänderungen in geeigneter Weise behandelt werden, steht eine entscheidende Frage im Raum:
+				welche Datenfelder sind zur Zeit gefüllt, und welche müssen noch gefüllt werden? Derzeit gibt es eine breite Palette von Praktiken in ganz Europa in einigen Ländern (wie z.B. Großbritannien) werden nur eine Handvoll von Variablen in den nationalen öffentlichen Beschaffungssystemen veröffentlicht, während viele andere (wie Polen) eine umfangreiche Datenvorlage verwenden,
+				die die EU-weiten TED-Vorlagen in Detailreichtum übertreffen. In den einzelnen Ländern bestehen dennoch wichtige Lücken. Zum Beispiel geben nur fünf Länder (Bulgarien, Georgien, Ungarn bis 2012, Malta und Schweden)
+				Informationen zu erfolglosen Bietern und ihren Geboten bekannt. Bieterinformationen sind essentiell für das Verständnis der Marktdynamiken und offenen Zugang, sowie für die Entwicklung von Indikatoren zu Absprachen bei öffentlichen Aufträgen. Eine weitere wichtige Variable, die typischerweise in den meisten europäischen Datensystemen fehlt, ist die Organisationskennung, die die zuverlässige Beurteilung der Leistung der Organisation ermöglicht und Käufer und Bieter eindeutig identifiziert (Abbildung 4).</p>
+
+			<p>Die Regierungen sollten die Tiefe der veröffentlichten Beschaffungsdaten erhöhen um ein umfassendes Monitoriing der öffentlichen Vergabeprozesse zu ermöglichen, die das Fundament für Good Government, einen effizienten Wettbewerb, und die Rechenschaftspflicht der Regierung sind. Insbesondere empfehlen wir Regierungen:</p>
+
+			<div class="centerbox">
+				<ul>
+					<li>
+						die Veröffentlichung von offenen Vergabedaten zum <b>gesamten Beschaffungszyklus</b> auf bestehenden öffentlichen Beschaffungsplattformen die mindestens Ankündigungen zu Ausschreibungen, Vergaben und Vertragsabschluss- sowie Umsetzung beinhalten.
+					</li>
+					<li>
+						die Veröffentlichung von <b>Informationen zu Änderungen, Modifikationen und erfolglosen Angeboten</b> in einem strukturierten und zuverlässigen Format, so dass aktuelle Informationen über alle Angebote zur Verfügung stehen.
+					</li>
+					<li>
+						die Veröffentlichung von einem <b>verpflichtendem Mindestsatz</b> an Variablen die unerlässlich für die Rechenschaftspflicht der Regierungen und die Transparenz der Ausschreibung sind (Tabelle 1).
+						Entscheidend ist, dass eindeutige Bezeichner (IDs) für Organisationen mit externen Registern, wie z.B. Firmenregister, verknüpfbar sind.
+						Dies ist eine grundlegende Voraussetzung um organisatorische Leistung zu überprüfen und überwachen.
+						DIGIWHIST empfiehlt Regierungen eine Liste mit Mindestanforderungen an zu veröffentlichende Variablen und deren Veröffentlichungsort.
+						Diese Liste ist dem <a href="http://standard.open-contracting.org/latest/en/schema">Open-Contracting Standard</a>
+						nahe, um bereits bestehende internationale Normen zu verbinden, während einige spezifische Variablen für den europäischen Kontext enthalten sind, die das Fundament für eine auf dem gesamten Kontinent wirksame Überwachung sind.
+					</li>
+				</ul>
+			</div>
+
+			<div class="tablebox">
+				<div class="legend">Tabelle 1. <b>Liste mit Mindestanforderungen an zu veröffentlichende Variablen und deren Veröffentlichungsort</b><br/>
+					Eine spartanische Liste von Schlüsselvariablen ermöglicht, die Rechenschaftspflicht und die Transparenz der Gebote zu unterstützen
+				</div>
+				<table class="table table-bordered table-responsive table-condensed">
+					<thead>
+					<tr>
+						<td rowspan="2">Variablen-Gruppe</td>
+						<td rowspan="2">Variable</td>
+						<td colspan="3">In der Ankündigung enthalten</td>
+					</tr>
+					<tr>
+						<td width="60">Vertrags&shy;abwicklung</td>
+						<td width="60">Auftrags&shy;vergabe</td>
+						<td width="60">Aus&shy;schreibung</td>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td rowspan="5">Käufer</td>
+						<td>Name des Käufers</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Büro / Abteilung des Käufers</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Eindeutige Käufer-ID</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Adresse des Käufers</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Käufertyp</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td rowspan="9">Bieter / Gebote</td>
+						<td>Name des Bieters</td>
+						<td>●</td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Eindeutige Bieter-ID / Steuer-ID</td>
+						<td>●</td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Adresse des Bieters</td>
+						<td>●</td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Anzahl der abgegeben Gebote</td>
+						<td></td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Anzahl der ausgeschlossen Gebote</td>
+						<td></td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Angebotspreis (Details zu Endpreis und Stückpreisen)s</td>
+						<td>●</td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Genaue Zeit der Angebotsabgabe</td>
+						<td></td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Angebots-Typ (Erfolgreich / nicht erfolgreiches Gebot)</td>
+						<td></td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Wirtschaftlicher Eigentümer</td>
+						<td>●</td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="10">Ausschreibung / Vertrag</td>
+						<td>Eindeutige Ausschreibungs-ID</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Verfahrenstyp</td>
+						<td></td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Rahmenvertrag (1. / 2. Stufe)</td>
+						<td></td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Zuschlagskriterien</td>
+						<td></td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Schwellenwert (unter / oberhalb des EU-Schwellenwerts?)</td>
+						<td></td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Geschätzter Preis (Details zu Endpreis oder Stückpreisen)</td>
+						<td></td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Beschaffungsart (Service, Versorgung, oder Arbeit)</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>CPV-Codes (% Auftragswert pro Produkt)</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>NUTS-Code (s) der Vertragsabwicklung</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Status (abgebrochen, andauernd, etc.)</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td rowspan="6">Zeitangaben</td>
+						<td>Veröffentlichungsdatum der Ausschreibung</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Gebotsabgabefrist</td>
+						<td></td>
+						<td></td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Start- und Enddaten des Vertrags</td>
+						<td>●</td>
+						<td>●</td>
+						<td>●</td>
+					</tr>
+					<tr>
+						<td>Veröffentlichungsdatum des Zuschlags</td>
+						<td></td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Vertragsunterschriftsdatum</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Veröffentlichungsdatum des Vertragsabschlusses</td>
+						<td>●</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2">Untervergabe</td>
+						<td>Name(n) und eindeutige ID(s) (Steuer-ID(s)) des/der Subunternehmer(s)</td>
+						<td>●</td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Anteil(e) des/der Subunternehmer(s)</td>
+						<td>●</td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2">Konsortium</td>
+						<td>Namen und eindeutige ID (Steuer-ID)(s) der Mitglieder des Konsortiums</td>
+						<td>●</td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Anteile der Mitglieder des Konsortiums</td>
+						<td>●</td>
+						<td>●</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="5">Vertragsleistung</td>
+						<td>Enddatum zur Ausführung des Auftrages</td>
+						<td>●</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Entsprach die Leistung dem Vertrag</td>
+						<td>●</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Erklärung im Falle von Aufschub des Vertrags</td>
+						<td>●</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Informationen über Vertragsänderung</td>
+						<td>●</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Informationen zur Leistungsqualität</td>
+						<td>●</td>
+						<td></td>
+						<td></td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<h3 id="guide5">5. Die Regierungen sollten den Zusammenhang zwischen öffentlichen Beschaffungsdaten und weiteren Datensätze erleichtern</h3>
+			<p>
+				Derzeit gibt es in fast allen von DIGIWHIST überprüften europäischen Vergabesystemen keine Verbindung zwischen den Datenbanken, in denen öffentliche Vergabedaten gespeichert sind, und denen, in denen die wichtigsten Akteure des öffentlichen Beschaffungswesen gelistet werden. Diese Datensätze zu verknüpfen ist nicht möglich, zumindest nicht ohne erhebliche Investitionen, selbst wenn eine Regierung dies wegen der oben erwähnten fehlenden Organisationskennungen tun möchte. Öffentliche Beschaffungsdaten separat von verknüpften Datensätzen zu speichern ist problematisch, da die Vergabe öffentlicher Aufträge eine übergreifende Regierungsfunktion ist, und zahlreiche Verknüpfungen zu Indikatoren der organisatorischen finanziellen Leistung (wie dem Haushaltsdefizit), und sektorspezifischen Ausgaben (wie zum Beispiel Krankenhaussterblichkeit oder Straßennutzung) hat.
+			</p>
+			<p>
+				Wir empfehlen, dass die Regierungen Verbindungen zwischen öffentlichen Beschaffungsdaten und damit verbundenen Datensätze schaffen. Diese sollten organisatorische Verhaltens- und Leistungsindikatoren durch die Verwendung von gemeinsamen organisatorischen IDs und Vertrags-IDs in verschiedenen Datensystemen beschreiben, wie zum Beispiel Zahlungen im öffentliche Beschaffungswesen, Firmenregister oder Gerichtsentscheidungen. Greifbare sektorale Leistungen, wie bspw. Straßenqualität, sind das, was für die Bürger letztlich relevant ist, weswegen das Vertrauen in komplexe öffentliche Beschaffungssysteme erhöht und Korruptionsrisiken minimiert werden sollten indem auf diese verknüpfte Datensätze aufgebaut wird. Die Verknüpfung der Datensätze würde nicht nur ein besseres Verständnis ermöglichen, wie öffentliche Gelder ausgegeben werden, sondern auch für eine bessere Risikobewertung des öffentlichen Beschaffungsprozesse sorgen. Daten über Firmeneigentümer und Daten über Personen die an Prozessen der öffentlichen Beschaffung beteiligt sind könnten verknüpft werden, um die Risiken der Günstlingswirtschaft zu messen und zu kontrollieren.
+			</p>
+
+			<h3 id="guide6">6. Die Regierungen sollten Ausschreibungen im öffentlichen Beschaffungswesen standardmäßig mit den ursprünglichen Ausschreibungssunterlagen verknüpfen</h3>
+			<p>
+				Typischerweise enthalten die auf öffentlichen Beschaffungsportalen veröffentlichten Beschaffungsdaten in nur zusammenfassende Informationen der ursprünglichen vollständigen Ausschreibungssunterlagen, wie etwa die vollständigen Ausschreibungsunterlagen oder den unterschriebenen Vertrag. In 22 von 35 Ländern sind in Ankündigungen zur öffentlichen Ausschreibung die Verknüpfungen zu den ursprünglichen Beschaffungsdokumentation standardmäßig enthalten, während in 13 Ländern eine solche Verbindung kein vorgeschriebener Bestandteil ist.
+				<span class="inline-footnote">Cingolani, L., Fazekas, M., Kukutschka, R. and Tóth, B. (2016). Towards a comprehensive mapping of information on public procurement tendering and its actors across Europe.</span>
+				Direkte Verknüpfungen von Ankündigungen mit der originalen und vollständigen Dokumentation verringert Transaktionskosten sowie die Wahrscheinlichkeit der korrupten Bereitstellung entscheidender Ausschreibungsinformationen an ausgewählte Bieter.
+			</p>
+			<p>
+				Eine solche direkte Verknüpfung zwischen öffentlichen Ausschreibungen und den dazugehörigen Unterlagen, wie u.a. dem unterschriebenen Vertrag, ermöglicht die einfache Überprüfung der Inhalte der öffentlichen Auftragsvergabe sowie weitere Untersuchungen von weiteren relevanten Datenpunkten die von öffentlichem Interesse sind, bspw. aufgrund von Korruptionsverdacht. Dies wird auch durch eine OGP Richtlinie unterstützt, die empfiehlt, andere relevante Datensätze zu öffnen (einschließlich internationaler Hilfe, Bilanzen, Finanzmanagement, Unternehmensregistern und den wirtschaftlichen Eigentümern von Unternehmen, Projektmanagement, politische Listen und branchenspezifischen Performance-Daten) und Tools zu erstellen um diese Datensätze zu verknüpfen und analysieren, um dadurch evidenzbasierte Entscheidungsfindung zu begünstigen.
+				<span class="inline-footnote"><a href="http://www.opengovguide.com/commitments/link-open-contracting-data-with-other-sources-of-data/">Open Government Guide</a>. Public Procurement. Link open contracting data with other sources of data.</span>
+			</p>
+			<p>
+				Daher sollten die Regierungen Ankündigungen von öffentlichen Ausschreibungen mit allen relevanten Originaldokumenten verknüpfen. Diese sollten die vollständigen Ausschreibungsunterlagen und Karten, Pläne usw. umfassen. Idealerweise sollten unterzeichnete Verträge ebenso verknüpft und leicht zugänglich sein.
+				<span class="inline-footnote">Šípoš, G., Samuek, S., &amp; Martin, K. (2015). <a href="http://www.transparency.sk/wp-content/uploads/2015/05/Open-Contracts.pdf">Not in force until published online</a>. What the radical transparency regime of public contracts achieved in Slovakia. Bratislava: Transparency International Slovakia.</span>
+				An dieser Stelle sollten Informationen über Subunternehmer sowie Vertragsänderungen, Rechnungen und Abschlussberichte mit dem Datensatz verknüpft werden. Übermittelte Gebote, oder zumindest Teile davon, können von diesen strengen Transparenzregeln ausgenommen werden um wirtschaftlich sensible Informationen oder die Privatsphäre des Einzelnen zu schützen.
+			</p>
+		</div>
+	</div>
+</div>
+
+<div class="section-head" id="dataquality">
+	<h2>IV. Datenqualität</h2>
+</div>
+<div class="section section-recommenations container">
+	<div class="row me-row">
+		<div class="col-md-12">
+			<h3 id="guide7">7. Die Regierungen sollten Kontrollmechanismen entwickeln, um die Aufrechterhaltung der Datenqualität sicherzustellen</h3>
+			<p>
+				Fehlende, unvollständige, und fehlerhafte Daten sind einige der grundlegenden Probleme in den europäischen öffentlichen Beschaffungsdatensystemen.
+				<span class="inline-footnote">Fazekas, M. and Toth, B. (2016) <a href="http://www.konkurrensverket.se/globalassets/publikationer/uppdragsforskning/forsk_rapport_2016-3.pdf">Assessing the potential for detecting collusion in Swedish public procurement</a>. KKV: Stockholm.</span>
+				Selbst in Ländern mit umfassenden Vorlagen für Datenübermittlung und einer zentralen öffentlichen Beschaffungsbehörde ist die Qualität der Verwaltungsdaten zu gering um die Überwachung des Datenerzeugungsprozesses zu ermöglichen, vor allem aufgrund schlecht gestalteter Online-Plattformen und mangelnder Durchsetzung.
+				<span class="inline-footnote">Ausführlichere Diskussion über Datenqualitätsprobleme siehe: Czibik, Á., Tóth, B., &amp; Fazekas, M. (2015). How to Construct a Public Procurement Database from Administrative Records? With examples from the Hungarian public procurement system of 2009-2012.</span>
+				Die simpelste Maßnahme der Datenqualitätsmessung, nämlich die Menge der fehlenden Informationen, zeigt, wie schlecht es um die meisten EU-Länder steht, vor allem um die reicheren und besser regierten Mitgliedstaaten wie Schweden oder Deutschland (Abbildung 5). Entscheidend ist, dass Investitionen in Dateninfrastruktur sich auszahlen: neue Mitgliedstaaten mit umfassenden öffentlichen Beschaffungsdatensystemen und zentralen Steuertarifen stehen bspw. vergleichsweise besser dar, als es bei der Slowakei und Rumänien der Fall ist.
+				investment in data infrastructure pays: new member states with more comprehensive public procurement data systems and more central control fare comparatively better, as is the case with Slovakia and Romania, for example.
+			</p>
+
+			<div class="chart-container-right">
+				<div class="chart ct-chart-bars-3"></div>
+				<div class="chart-legend legend">
+					Abbildung 5. <b>Ausmaß der fehlenden Informationen</b>
+					Die Datenqualität ist europaweit niedrig, da in den EU-weiten TED-Daten in den Jahren 2009-2015 15% der Pflichtfelder leer sind
+				</div>
+			</div>
+
+			<script>
+
+
+				new Chartist.Bar('.ct-chart-bars-3', {
+					labels: [
+						'Schweden', 'Finnland', 'Schweitz', 'Luxemburg', 'Frankreich', 'Portugal', 'Spanien',
+						'Niederlande', 'Vereinigtes Königreich', 'Dänemark', 'Deutschland',
+						'Italien', 'EU Durchschnitt', 'Belgien',
+						'Bulgarien', 'Griechenland', 'Österreich', 'Zypern', 'Litauen', 'Kroatien', 'Slowenien',
+						'Estland', 'Polen', 'Lettland', 'Tschechien', 'Ungarn', 'Rumänien',
+						'Island', 'Slowakei'
+					],
+					series: [
+						[
+							28.88715,
+							28.69162,
+							28.1283,
+							25.65757,
+							25.62893,
+							25.26982,
+							24.53326,
+							17.95992,
+							17.51309,
+							17.20487,
+							16.70124,
+							16.61096,
+							15.61198,
+							14.76434,
+							12.34032,
+							12.31615,
+							11.74305,
+							11.20111,
+							10.5869,
+							9.9654,
+							9.23008,
+							8.04087,
+							7.21796,
+							6.54164,
+							5.25668,
+							3.60993,
+							2.84837,
+							2.27012,
+							2.11485
+						]
+					]
+				}, {
+					height: 500,
+					seriesBarDistance: 10,
+					reverseData: true,
+					horizontalBars: true,
+					chartPadding: {
+						top: 0,
+						right: 40,
+						bottom: 0,
+						left: 0
+					},
+					axisY: {
+						offset: 120,
+						showGrid: false
+					},
+					axisX: {
+						onlyInteger: true,
+						labelInterpolationFnc: function (value) {
+							return value.toString() + '%';
+						}
+					},
+					plugins: [
+						Chartist.plugins.tooltip({
+							appendToBody: true,
+							transformTooltipTextFnc: function (value) {
+								return parseFloat(value).toFixed(2) + '%';
+							}
+						})
+					]
+				});
+
+
+			</script>
+
+			<p>
+				Entsprechend empfehlen wir, dass die bereits existierenden Anforderungen an Daten und Berichterstattung konsequent durchgesetzt werden und die Datenqualität europaweit auf den gesetzlich vorgeschriebenen Mindeststandard erhöht wird. Um sicherzustellen, dass alle erforderlichen Datenfelder wahrheitsgemäß ausgefüllt sind, sollten die Regierungen die Einführung zentralisierter Steuerungsmechanismen und Strafen für die Nichteinhaltung in Betracht ziehen. Die Bestrafung bei Nichteinhaltung kann in extremen Fällen das Einfrieren des Angebots oder die Unterbrechung der Zahlungen bis zur Korrektur der falschen Aufzeichnungen umfassen, wie dies bspw. bereits in der Slowakei praktiziert wird.
+				<span class="line-footnote">Šípoš, G., Samuek, S., &amp; Martin, K. (2015). Not in force until published online. What the radical transparency regime of public contracts achieved in Slovakia.</span>
+				Aber auch leichtere Sanktionen könnten die gewünschte Datenqualität herbeiführen, bspw. durch das automatische Versenden von klärenden Fragen an die Körperschaften des öffentlichen Rechts die mit der Berichterstattung beauftragt sind, bis alle fehlenden Informationen und Widersprüche geklärt werden. Auch wenn die Vollständigkeit der Daten und deren angemessene Veröffentlichung nicht zwangsläufig entscheidend für die Ergebnisse der Vergabe öffentlicher Aufträge sind, ermöglichen umfassendere Informationen in einem leicht zugänglichen Format einen besseren Wettbewerb und bessere Ergebnisse.
+				<span class="inline-footnote">Coviello, D., &amp; Mariniello, M. (2014). Publicity requirements in public procurement: Evidence from a regression discontinuity design. Journal of Public Economics, 109, 76–100.</span>
+			</p>
+
+			<h3 id="guide8">8. Die Regierungen sollten durch die Verknüpfung von Publikationssystemen bürokratische Belastung senken</h3>
+			<p>
+				Ausschreibung, Vertrags- und Zahlungsmanagement-Systeme werden derzeit nur selten automatisiert mit Daten aus verknüpften administrativen Datenbanken wie dem Corporate Register ausgefüllt (siehe oben bzgl. dem Verknüpfen von Daten), da solche Verknüpfungen überhaupt erst nicht hergestellt werden. Das bedeutet, dass in den meisten europäischen Ländern Standardelemente der öffentlichen Auftragsvergabe, so wie Ankündigungen und Aufzeichnungen des Namens der beauftragten Firma und deren Adresse, manuell eingegeben werden, was zusätzliche unnötige Arbeit schafft und das Potenzial für Fehler erhöht.
+			</p>
+			<p>
+				Wenn administrative Datensätze verknüpft sind, werden die amtlich geeichten (und vermeintlich korrekten) Informationen automatisiert zu den Aufzeichnungen öffentlicher Aufträgen hinzugefügt und minimieren so den administrativen Verwaltungsaufwand und senken das Risiko einer fehlerhaften Dateneingabe. Dies wird auch von der G-20 empfohlen und sollte somit von der EU als Richtlinie verfolgt werden (G20 Principles for promoting integrity in public procurement).
+			</p>
+		</div>
+	</div>
+</div>
+
+<div class="section-head" id="datause">
+	<h2>V. Datennutzung</h2>
+</div>
+<div class="section section-recommenations container">
+	<div class="row me-row">
+		<div class="col-md-12">
+			<h3 id="guide9">9. Die Regierungen sollten die regelmäßige Nutzung offener Vergabedaten innerhalb und außerhalb der Regierungen fördern</h3>
+			<p>
+				Da sehr wenig strukturierte Daten vorhanden sind, gibt es nur wenige Regierungsbehörden und Nichtregierungsorganisationen, die Datenbanken der öffentlichen Auftragsvergabe in einer substantiellen Weise nutzen. In vielen Ländern, wie der Slowakei oder Ungarn, hat die Zivilgesellschaft verstärkt begonnen, dies zu ändern indem sie Datensätze erstellt und Portale gebaut haben, die die Daten leicht verständlich und aktiv nutzbar machen. Die Wiederverwendung öffentlicher Daten hat das Potential, zu einer wettbewerbsfähigeren und rechenschaftlicheren Regierung beizutragen, wenn betroffene Akteure die Daten verstehen können, damit agieren, und zu Veränderungen beitragen können.
+			</p>
+			<p>
+				Regierungen als wichtigste Datenhüter sollten die Nutzung des öffentlichen Beschaffungsdaten innerhalb der Regierung fördern und die Wiederverwendung von Daten durch nichtstaatliche Akteure wie zivilgesellschaftliche Kontrollinstanzen und Datenanbieter erleichtern. Die Nutzung der öffentlichen Beschaffungsdaten sollte durch die Schaffung von direkten Feedback-Mechanismen über den gesamten Vergabezyklus (das heißt Planung, Ausschreibung, Vergabe, Durchführung) unter Einbeziehung aller Beteiligten innerhalb und außerhalb der Regierung erleichtert werden. Zweitens sollten die Regierungen Nichtregierungsorganisationen unterstützen, die die Prozesse überwachen, analysieren, und als freundschaftliche Verbündete von Beschaffungsstellen und Überwachungsstellen wie der Staatsanwaltschaft Probleme untersuchen.
+			</p>
+			<p>
+				Es gibt global viele Beispiele von guter Praxis beim Engagement von betroffenen Akteuren zur Überprüfung, Überwachung, und Handeln in Bezug auf Daten und Analysen des öffentlichen Beschaffungswesens.
+				Sogenannte Integritätspakte
+				<a href="http://ec.europa.eu/regional_policy/hu/policy/how/improving-investment/integrity-pacts/">(European Commission 2017 Integrity Pacts)</a>
+				in Europa und Social Witness Programme in Mexiko
+					<a href="http://www.opengovguide.com/country-examples/in-mexico-social-witnesses-oversee-public-procurement/">(Open Government Guide 2017 Country Example)</a>
+				bieten potentiell wirksame Möglichkeiten, die Bedeutung der Benutzeransichten und der zivilgesellschaftlichen Überwachung zu stärken. Darüber hinaus kann den Akteuren nicht nur die Möglichkeit gegeben werden, Feedback zu bestehenden Beschaffungsprozessen zu geben, wie bpsw. im Fall von Unregelmäßigkeiten in der Implementierungssphase, sondern auch in Bezug auf die veröffentlichten Daten (zum Beispiel durch Markierung unvollständiger Datensätze). In einigen Ländern wie Großbritannien haben die Arbeiten an Stakeholder-Engagement Praktiken bereits begonnen, mit dem Bau des Heathrow Terminal 5 als ein Beispiel.
+				In addition, stakeholders can be given the opportunity to provide feedback to existing procurement processes in the case of irregularities, for example in the implementation phase, but
+				also on the data published (for instance, by marking incomplete datasets). Some countries like the UK have already started working on stakeholder engagement practices, with one example being the construction of Heathrow
+				Terminal 5.
+				<span class="inline-footnote"><a href="https://www.oecd.org/governance/procurement/toolbox/search/stakeholder-engagement-during-construction-heathrow-airport-terminal-5.pdf">OECD (2016) Public Procurement Toolbox</a>. Country case: Stakeholder engagement during the construction of Heathrow Airport Terminal 5</span>
+			</p>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid footer">
+	<div class="row">
+		<div class="col-md-5">
+			<div class="footer-logo">
+				<a href="https://digiwhist.eu" target="_blank"><img alt="DIGIWHIST Logo" src="../../assets/img/digiwhist-logo.png"></a>
+			</div>
+			<div class="footer-logo">
+				<a href="https://okfn.de" target="_blank"><img alt="Open Knowledge Foundation Deutschland Logo" src="../../assets/img/okfde-logo.svg"></a>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<h4>Diese Webseite ist Teil des <a href="http://digiwhist.eu">Digiwhist</a> Projekts.</h4>
+			<a href="http://digiwhist.eu/legal-notice/">Impressum</a>
+			<a href="http://digiwhist.eu/privacy-policy/">Datenschutz</a>
+		</div>
+		<div class="col-md-3">
+			<div class="funding">
+				<img alt="European Union Logo" src="../../assets/img/european-union-flag.jpg">
+				<div class="horizon2020">This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 645852.</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Piwik -->
+<script type="text/javascript">
+	var _paq = _paq || [];
+	_paq.push(['trackPageView']);
+	_paq.push(['enableLinkTracking']);
+	(function() {
+		var u="//traffic.okfn.de/";
+		_paq.push(['setTrackerUrl', u+'piwik.php']);
+		_paq.push(['setSiteId', '34']);
+		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+	})();
+</script>
+<!-- End Piwik Code -->
+
+</body>
+</html>

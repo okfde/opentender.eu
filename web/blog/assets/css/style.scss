@@ -69,6 +69,12 @@ a {
   }
 }
 
+@media (max-width: 1000px) {
+  p.more {
+    margin: 0 auto;
+  }
+}
+
 .section-head {
   background-color: #deddde;
   padding-top: 30px;
@@ -470,6 +476,7 @@ a {
   ul li.active {
     display: inline-block;
   }
+
 }
 
 /* Mobile */
@@ -495,6 +502,10 @@ a {
     h3 {
       margin-top: 20px;
     }
+  }
+
+  .page-scroll {
+    font-size: 0.8em;
   }
 
 }
