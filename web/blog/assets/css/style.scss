@@ -595,11 +595,23 @@ a {
 
 .chart-legend {
   padding-left: 60px;
+  margin-bottom: 30px;
 }
 
 .chart-container-right {
   max-width: 500px;
   float: right;
+}
+
+.chart-container-img-right {
+  max-width: 400px;
+  float: right;
+  img {
+    height: auto;
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 .tablebox {
