@@ -9,12 +9,6 @@ $(document).ready(function () {
 		event.preventDefault();
 	});
 
-	$('.hero-header').css('min-height', $(window).innerHeight());
-	$(window).resize(function (e) {
-		$('.hero-header').css('min-height', $(window).innerHeight());
-	});
-
-
 	$(".section-affix").affix({
 
 		offset: {

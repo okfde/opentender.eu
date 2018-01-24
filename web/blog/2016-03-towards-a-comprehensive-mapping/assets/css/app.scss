@@ -88,6 +88,26 @@ header {
       @include grid(25);
     }
   }
+  .grid-cell-30 {
+    display: inline-block;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    @include grid(100);
+    @include breakpoint(from-medium) {
+      @include grid(30);
+    }
+  }
+  .grid-cell-40 {
+    display: inline-block;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    @include grid(100);
+    @include breakpoint(from-medium) {
+      @include grid(30);
+    }
+  }
   .grid-cell-80 {
     display: inline-block;
     float: left;
@@ -460,6 +480,81 @@ svg {
       a {
         text-decoration: underline;
       }
+    }
+  }
+
+}
+
+.header-logo {
+  min-width: 120px;
+  max-width: 120px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 8px;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  margin-top: 20px;
+  img {
+      width: 100px;
+      height: auto;
+  }
+}
+
+.footer {
+  background-color: #2a2a2a;
+  margin-top: 30px;
+  color: #fff;
+  padding: 20px;
+  font-weight: 300;
+  padding-top: 30px;
+
+  a {
+    color: #00b5dc;
+
+    &:hover {
+      color: lighten(#00b5dc, 20%);
+    }
+  }
+
+  .footer-logo {
+    min-width: 180px;
+    max-width: 180px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 8px;
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+
+    &:hover {
+      background-color: #53abc8;
+    }
+  }
+
+  .funding {
+    font-size: 0.8em;
+    line-height: 1em;
+    float: right;
+    img {
+      height: 50px;
+      width: auto;
+    }
+    .horizon2020 {
+      display: inline-block;
+      max-width: 80%;
+      float: right;
+      font-size: 10px;
+      width: 20em;
+      line-height: 1.2;
+      text-align: left;
+      padding: 0.1ex 0 0 1.2ex;
     }
   }
 

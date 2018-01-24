@@ -407,6 +407,20 @@ a {
     display: block;
   }
 
+  .entry {
+    margin-top: 40px;
+    a {
+      color: #fff;
+      text-decoration: underline;
+
+      &:hover {
+        color: #5cb85c;
+        text-decoration: none;
+      }
+    }
+
+  }
+
   .more {
     font-size: 0.9em;
     margin-top: 40px;

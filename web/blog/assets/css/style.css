@@ -293,6 +293,14 @@ a {
     margin-top: 3em; }
   .hero-header .buttons {
     display: block; }
+  .hero-header .entry {
+    margin-top: 40px; }
+    .hero-header .entry a {
+      color: #fff;
+      text-decoration: underline; }
+      .hero-header .entry a:hover {
+        color: #5cb85c;
+        text-decoration: none; }
   .hero-header .more {
     font-size: 0.9em;
     margin-top: 40px;

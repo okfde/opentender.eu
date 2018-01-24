@@ -79,6 +79,24 @@ header {
     @media only screen and (min-width: 50em) {
       .grid-container .grid-cell-25 {
         width: 25%; } }
+  .grid-container .grid-cell-30 {
+    display: inline-block;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%; }
+    @media only screen and (min-width: 50em) {
+      .grid-container .grid-cell-30 {
+        width: 30%; } }
+  .grid-container .grid-cell-40 {
+    display: inline-block;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%; }
+    @media only screen and (min-width: 50em) {
+      .grid-container .grid-cell-40 {
+        width: 30%; } }
   .grid-container .grid-cell-80 {
     display: inline-block;
     float: left;
@@ -350,6 +368,65 @@ svg {
     line-height: 1.4em; }
     .country-dialog .country .text a {
       text-decoration: underline; }
+
+.header-logo {
+  min-width: 120px;
+  max-width: 120px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 8px;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  margin-top: 20px; }
+  .header-logo img {
+    width: 100px;
+    height: auto; }
+
+.footer {
+  background-color: #2a2a2a;
+  margin-top: 30px;
+  color: #fff;
+  padding: 20px;
+  font-weight: 300;
+  padding-top: 30px; }
+  .footer a {
+    color: #00b5dc; }
+    .footer a:hover {
+      color: #43deff; }
+  .footer .footer-logo {
+    min-width: 180px;
+    max-width: 180px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 8px;
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s; }
+    .footer .footer-logo:hover {
+      background-color: #53abc8; }
+  .footer .funding {
+    font-size: 0.8em;
+    line-height: 1em;
+    float: right; }
+    .footer .funding img {
+      height: 50px;
+      width: auto; }
+    .footer .funding .horizon2020 {
+      display: inline-block;
+      max-width: 80%;
+      float: right;
+      font-size: 10px;
+      width: 20em;
+      line-height: 1.2;
+      text-align: left;
+      padding: 0.1ex 0 0 1.2ex; }
 
 .iframe {
   width: 100%;
