@@ -1,6 +1,6 @@
 const fs = require('fs');
-const countries = JSON.parse(fs.readFileSync("../web/mapping/assets/data/countries.json").toString());
-const tables = JSON.parse(fs.readFileSync("../web/mapping/assets/data/tables.json").toString());
+const countries = JSON.parse(fs.readFileSync("../web/2016-03-towards-a-comprehensive-mapping/assets/data/countries.json").toString());
+const tables = JSON.parse(fs.readFileSync("../web/2016-03-towards-a-comprehensive-mapping/assets/data/tables.json").toString());
 const countries_ids = JSON.parse(fs.readFileSync("./countries_ids.json").toString());
 countries_ids.forEach(function (c) {
 	c.iso = c.iso.toLowerCase();
@@ -68,4 +68,4 @@ tables.forEach(function (table) {
 	}
 });
 
-fs.writeFileSync('../web/mapping/assets/data/data.json', JSON.stringify({countries: countries_ids, tables: tables}));
+fs.writeFileSync('../web/2016-03-towards-a-comprehensive-mapping/assets/data/data.json', JSON.stringify({countries: countries_ids, tables: tables}));

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tender Landscape - Access to tender info in the EU</title>
+	<link rel="stylesheet" type="text/css" href="../assets/fonts/lato2/lato2.css">
+	<link rel="stylesheet" type="text/css" href="../assets/fonts/entypo/entypo.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/ngDialog.min.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/ngDialog-theme-default.min.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/app.css"/>
+	<script src="./assets/js/chroma.min.js"></script>
+	<script src="./assets/js/angular.min.js"></script>
+	<script src="./assets/js/angular-sanitize.min.js"></script>
+	<script src="./assets/js/angular-animate.min.js"></script>
+	<script src="./assets/js/ngDialog.min.js"></script>
+	<script src="./assets/js/app.js"></script>
+</head>
+<body ng-controller="MainCtrl">
+<header>
+	<div class="grid-container">
+		<div class="grid-cell-80 title"><h1>D1.1 Towards a comprehensive mapping of information on public procurement tendering and its actors across Europe</h1></div>
+	</div>
+</header>
+<div class="grid-container">
+	<div class="grid-cell-25">
+		<div class="table-list">
+			<div ng-repeat="table in view.tables">
+				<a href ng-click="view.table = table" ng-class="{active:view.table==table}">
+					<div ng-bind="table.nr"></div>
+					<div ng-bind="table.name"></div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="grid-cell-75">
+		<div>
+			<h2><span ng-bind="view.table.nr"></span>. <span ng-bind="view.table.name"></span></h2>
+			<div ng-if="view.table.values" class="tab-host">
+				<div ng-repeat="vals in view.table.values" ng-click="view.current = vals"
+					 ng-bind="vals.name" class="tab-cell" ng-class="{active:vals==view.current}">
+				</div>
+			</div>
+		</div>
+		<div class="grid-container tableview" ng-if="view.current">
+			<div class="grid-cell-50">
+				<div class="tools pull-right" ng-controller="ToolsCtrl">
+					<a href ng-href="./assets/images/d1.1-{{view.current.nr}}.png" ng-attr-download="d1.1-{{view.current.nr}}.png" target="_blank" title="Download Map as PNG"><i class="icon-download"></i><span class="tool-title">Download Map</span></a>
+				</div>
+				<div ng-if="view.dataloaded" svg-map map-data="view"></div>
+				<div class="legend table">
+					<div class="row">
+						<div class="cell" ng-repeat="group in view.current.groups" backcolor="{{group.color}}" ng-bind="group.name"></div>
+					</div>
+				</div>
+				<div class="selected-country">
+					<div ng-show="view.hoverEntry">
+						<div class="subtitle" ng-bind="view.hoverEntry.country.name"></div>
+						<div class="value">
+							<span ng-bind="view.hoverEntry.value"></span><span ng-bind="view.current.unit"></span>
+							<div ng-if="!(view.hoverEntry.value.length>0)" ng-bind="view.current.groups[view.hoverEntry.group].name"></div>
+						</div>
+						<div class="info" ng-if="view.hoverEntry.info" ng-bind="view.hoverEntry.info"></div>
+						<span ng-if="(view.hoverEntry.value.length>0) && (view.hoverEntry.value!==view.current.groups[view.hoverEntry.group].name)" class="subtitle" ng-bind="view.current.groups[view.hoverEntry.group].name"></span>
+					</div>
+				</div>
+			</div>
+			<div class="grid-cell-50">
+				<div class="tools-container">
+					<div class="tools pull-right" ng-controller="ToolsCtrl">
+						<a href ng-click="view.showvalues=!view.showvalues"  title="See {{view.showvalues?'Groups':'Values'}}"><i ng-class="{'icon-flow-cascade':view.showvalues,'icon-list':!view.showvalues}"></i><span class="tool-title">Toggle View</span></a>
+						<a href ng-click="exportTSV(view.table)" ng-attr-download="d1.1-{{view.current.nr}}.tsv" title="Download as TSV"><i class="icon-download"></i><span class="tool-title">Download Data</span></a>
+					</div>
+				</div>
+				<div class="table-container" ng-include="'./assets/partials/table.html'"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

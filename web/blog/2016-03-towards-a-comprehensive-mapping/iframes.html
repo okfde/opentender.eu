@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+	<meta charset="UTF-8">
+	<title>Tender Landscape - Iframe Test Site</title>
+	<link rel="stylesheet" type="text/css" href="../assets/fonts/lato2/lato2.css">
+	<link rel="stylesheet" type="text/css" href="../assets/fonts/entypo/entypo.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/app.css"/>
+	<script src="./assets/js/angular.min.js"></script>
+	<script src="./assets/js/angular-sanitize.min.js"></script>
+	<script src="./assets/js/angular-animate.min.js"></script>
+	<script src="./assets/js/ngDialog.min.js"></script>
+	<script src="./assets/js/chroma.min.js"></script>
+	<script src="./assets/js/app.js"></script>
+	<script>
+		app.controller('IFrameTestCtrl', function ($scope, $document, $timeout, $sce, data) {
+
+			$scope.selected = {};
+			data.init(function (d) {
+				$scope.tables = d.tables;
+				$scope.selected.table = d.tables[0];
+			});
+			$scope.dims = [
+				{w: 800, h: 685},
+				{w: 720, h: 624},
+				{w: 600, h: 524},
+				{w: 300, h: 300}
+			];
+			$scope.dims.forEach(function (d) {
+				d.name = d.w + 'x' + d.h + ' ' + (d.w / d.h).toFixed(2);
+			});
+			$scope.selected.dim = $scope.dims[0];
+
+			$scope.$watch('selected.dim', function () {
+				$scope.setIFrameUrl();
+			});
+
+			$scope.$watch('selected.table', function () {
+				$scope.setIFrameUrl();
+			});
+
+			$scope.$watch('selected.sub', function () {
+				$scope.setIFrameUrl();
+			});
+
+			$scope.setIFrameUrl = function () {
+				var nr = 1;
+				var sub = -1;
+				if ($scope.selected.table) {
+					nr = $scope.selected.table.nr;
+					if ($scope.selected.table.values) {
+						sub = $scope.selected.table.values.indexOf($scope.selected.sub);
+						if (sub < 0) {
+							$scope.selected.sub = $scope.selected.table.values[0];
+							sub = 0;
+						}
+					}
+				}
+				var url = 'https://opentender.eu/mapping/iframe.html#?nr=' + (nr);
+				if (sub >= 0) {
+					url = url + '&sub=' + sub;
+				}
+				$scope.iframe_url = url;
+				$scope.iframe_url_trust = $sce.trustAsResourceUrl($scope.iframe_url);
+				$scope.iframe_link = '<iframe src="' + $scope.iframe_url + '" frameborder="0" width="' + $scope.selected.dim.w + 'px" height="' + $scope.selected.dim.h + 'px"></iframe>';
+			};
+		});
+	</script>
+</head>
+<body ng-controller="IFrameTestCtrl">
+
+<div style="max-width: 1000px; margin:0 auto;">
+	<h3>Settings</h3>
+	<form>
+		<div>
+			<label for="mySelect">Table:</label>
+			<select name="mySelect" id="mySelect" ng-model="selected.table" ng-options="option.name for option in tables track by option.nr"></select>
+		</div>
+		<div ng-if="selected.table.values">
+			<label for="mySelect2">Sub-Table:</label>
+			<select name="mySelect2" id="mySelect2" ng-model="selected.sub" ng-options="option.name for option in selected.table.values"></select>
+		</div>
+		<div>
+			<label for="mySelect3">Select Size:</label>
+			<select name="mySelect3" id="mySelect3" ng-model="selected.dim" ng-options="option.name for option in dims"></select>
+		</div>
+	</form>
+	<hr>
+
+	<h3>Code</h3>
+	<pre ng-bind="iframe_link" style="border:1px solid #ececec; border-radius: 4px; padding:8px;"></pre>
+	<hr>
+
+	<h3>Preview</h3>
+	<iframe ng-src="{{iframe_url_trust}}" frameborder="0" width="{{selected.dim.w}}px" height="{{selected.dim.h}}px" frameborder="0"></iframe>
+	<hr>
+</div>
+
+</body>
+</html>

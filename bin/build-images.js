@@ -2,7 +2,7 @@ const fs = require("fs");
 const svg2png = require("svg2png");
 const chroma = require('../web/assets/bower_components/chroma-js/chroma');
 
-const tables = JSON.parse(fs.readFileSync("../web/mapping/assets/data/tables.json").toString());
+const tables = JSON.parse(fs.readFileSync("../web/2016-03-towards-a-comprehensive-mapping/assets/data/tables.json").toString());
 const countries_ids = JSON.parse(fs.readFileSync("./countries_ids.json").toString());
 countries_ids.forEach(function (c) {
 	c.iso = c.iso.toLowerCase();
@@ -10,7 +10,7 @@ countries_ids.forEach(function (c) {
 
 var size = 2;
 
-const svg = fs.readFileSync("../web/mapping/assets/svg/borders_iso.svg").toString();
+const svg = fs.readFileSync("../web/2016-03-towards-a-comprehensive-mapping/assets/svg/borders_iso.svg").toString();
 const svgslice = svg.split('css"><![CDATA[');
 svgslice[0] = svgslice[0] + 'css"><![CDATA[ ';
 const toPng = function (table) {
@@ -26,8 +26,8 @@ const toPng = function (table) {
 	});
 	const svgbuffer = new Buffer(svgslice[0] + css.join(' ') + svgslice[1]);
 	const pngbuffer = svg2png.sync(svgbuffer, {width: 783 * size, height: 709 * size});
-	fs.writeFileSync("../web/mapping/assets/images/d1.1-" + table.nr + ".svg", svgbuffer);
-	fs.writeFileSync("../web/mapping/assets/images/d1.1-" + table.nr + ".png", pngbuffer);
+	fs.writeFileSync("../web/2016-03-towards-a-comprehensive-mapping/assets/images/d1.1-" + table.nr + ".svg", svgbuffer);
+	fs.writeFileSync("../web/2016-03-towards-a-comprehensive-mapping/assets/images/d1.1-" + table.nr + ".png", pngbuffer);
 };
 
 tables.forEach(function (t) {
